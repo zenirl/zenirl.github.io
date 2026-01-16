@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty - The Minimalist Journal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%);
+            color: #F5F2E8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #A8A8A8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            color: #F5F2E8;
+        }
+
+        .icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #5C6B73 0%, #3D5A6C 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin-bottom: 32px;
+            color: #F5F2E8;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+        }
+
+        .tagline {
+            color: #7FA8B8;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .description {
+            max-width: 500px;
+            color: #A8A8A8;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            background: #2C2C2C;
+            padding: 20px;
+            border-radius: 16px;
+            width: 180px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            font-size: 14px;
+            color: #7FA8B8;
+            margin-bottom: 4px;
+        }
+
+        .feature-desc {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .cta {
+            display: inline-block;
+            background: #5C6B73;
+            color: #F5F2E8;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: background 0.2s ease;
+        }
+
+        .cta:hover {
+            background: #6D7C84;
+        }
+
+        .privacy-link {
+            color: #666;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .privacy-link:hover {
+            color: #A8A8A8;
+        }
+
+        footer {
+            margin-top: 60px;
+            color: #444;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../" class="back-link">← ZenCan</a>
+
+    <div class="icon">∅</div>
+    <h1>Empty</h1>
+    <p class="tagline">The Minimalist Journal</p>
+
+    <p class="description">
+        Write just one sentence each day. Watch your words fade into the void. 
+        At year's end, rediscover 365 moments of presence—a gift from your past self.
+    </p>
+
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">✨</div>
+            <div class="feature-title">One Sentence</div>
+            <div class="feature-desc">Less is more</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🌊</div>
+            <div class="feature-title">Let It Go</div>
+            <div class="feature-desc">Watch words fade away</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🎁</div>
+            <div class="feature-title">Year's Reveal</div>
+            <div class="feature-desc">A gift to yourself</div>
+        </div>
+    </div>
+
+    <a href="https://play.google.com/store/apps/details?id=com.zencan.empty" class="cta">
+        Get on Play Store
+    </a>
+
+    <a href="privacy.html" class="privacy-link">Privacy Policy</a>
+
+    <footer>
+        <p>© 2026 ZenCan</p>
+    </footer>
+</body>
+</html>

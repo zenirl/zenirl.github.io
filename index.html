@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenCan - Mindful Apps</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%);
+            color: #F5F2E8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tagline {
+            color: #A8A8A8;
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 80px;
+        }
+
+        .apps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            max-width: 800px;
+        }
+
+        .app-card {
+            background: #2C2C2C;
+            border-radius: 24px;
+            padding: 40px;
+            width: 320px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        .app-icon.bloom {
+            background: linear-gradient(135deg, #FFB7C5 0%, #FF9AAA 100%);
+        }
+
+        .app-icon.empty {
+            background: linear-gradient(135deg, #5C6B73 0%, #3D5A6C 100%);
+        }
+
+        .app-name {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .app-tagline {
+            color: #A8A8A8;
+            font-size: 14px;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .app-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .app-links a {
+            color: #A8A8A8;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background: #363636;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .app-links a:hover {
+            background: #404040;
+            color: #F5F2E8;
+        }
+
+        .app-links a.primary {
+            background: #5C6B73;
+            color: #F5F2E8;
+        }
+
+        .app-links a.primary:hover {
+            background: #6D7C84;
+        }
+
+        .app-links a.bloom-primary {
+            background: #FFB7C5;
+            color: #1A1A1A;
+        }
+
+        .app-links a.bloom-primary:hover {
+            background: #FFC7D3;
+        }
+
+        footer {
+            margin-top: 80px;
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #F5F2E8;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">ZenCan</div>
+    <p class="tagline">Mindful apps for a calmer life</p>
+
+    <div class="apps">
+        <div class="app-card">
+            <div class="app-icon bloom">🌸</div>
+            <h2 class="app-name">Bloom</h2>
+            <p class="app-tagline">Capture 1.5 seconds of life daily.<br>Weekly cinematic recap.</p>
+            <div class="app-links">
+                <a href="https://play.google.com/store/apps/details?id=com.zencan.bloom" class="bloom-primary">Get on Play Store</a>
+                <a href="bloom/privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <div class="app-icon empty">∅</div>
+            <h2 class="app-name">Empty</h2>
+            <p class="app-tagline">One sentence a day.<br>Reveal at year's end.</p>
+            <div class="app-links">
+                <a href="https://play.google.com/store/apps/details?id=com.zencan.empty" class="primary">Get on Play Store</a>
+                <a href="empty/privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 ZenCan · <a href="mailto:zencandev@gmail.com">zencandev@gmail.com</a></p>
+    </footer>
+</body>
+</html>
