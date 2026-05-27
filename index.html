@@ -36,18 +36,32 @@
             margin-bottom: 80px;
         }
 
+        .section-heading {
+            color: #A8A8A8;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 64px 0 24px;
+            text-align: center;
+        }
+
+        .section-heading:first-of-type {
+            margin-top: 0;
+        }
+
         .apps {
             display: flex;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 32px;
             justify-content: center;
-            max-width: 800px;
+            max-width: 1100px;
         }
 
         .app-card {
             background: #2C2C2C;
             border-radius: 24px;
-            padding: 40px;
+            padding: 36px 32px;
             width: 320px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -69,16 +83,23 @@
             font-size: 36px;
         }
 
-        .app-icon.bloom {
-            background: linear-gradient(135deg, #FFB7C5 0%, #FF9AAA 100%);
-        }
+        /* Phone-app icons */
+        .app-icon.bloom { background: linear-gradient(135deg, #FFB7C5 0%, #FF9AAA 100%); }
+        .app-icon.empty { background: linear-gradient(135deg, #5C6B73 0%, #3D5A6C 100%); }
 
-        .app-icon.empty {
-            background: linear-gradient(135deg, #5C6B73 0%, #3D5A6C 100%);
-        }
+        /* Watch-game icons — one tinted gradient per game */
+        .app-icon.asteroids { background: linear-gradient(135deg, #1E3A5F 0%, #0A1929 100%); }
+        .app-icon.beat      { background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%); }
+        .app-icon.defense   { background: linear-gradient(135deg, #00C9A7 0%, #00897B 100%); }
+        .app-icon.snake     { background: linear-gradient(135deg, #66BB6A 0%, #2E7D32 100%); }
+        .app-icon.spell     { background: linear-gradient(135deg, #9C27B0 0%, #4A148C 100%); }
+        .app-icon.lockpick  { background: linear-gradient(135deg, #FFB74D 0%, #C68400 100%); }
+        .app-icon.morse     { background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%); }
+        .app-icon.pinball   { background: linear-gradient(135deg, #FF7043 0%, #BF360C 100%); }
+        .app-icon.safecracker { background: linear-gradient(135deg, #B0BEC5 0%, #455A64 100%); }
 
         .app-name {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 300;
             margin-bottom: 8px;
             letter-spacing: 2px;
@@ -89,15 +110,16 @@
             font-size: 14px;
             margin-bottom: 24px;
             line-height: 1.6;
+            min-height: 44px;
         }
 
         .app-links {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .app-links a {
+        .app-links a, .app-links .coming-soon {
             color: #A8A8A8;
             text-decoration: none;
             font-size: 14px;
@@ -105,6 +127,7 @@
             border-radius: 12px;
             background: #363636;
             transition: background 0.2s ease, color 0.2s ease;
+            display: block;
         }
 
         .app-links a:hover {
@@ -130,6 +153,14 @@
             background: #FFC7D3;
         }
 
+        /* Coming-soon: looks like a disabled button so it doesn't read as a link */
+        .app-links .coming-soon {
+            background: transparent;
+            border: 1px dashed #4A4A4A;
+            color: #7A7A7A;
+            cursor: default;
+        }
+
         footer {
             margin-top: 80px;
             color: #666;
@@ -151,14 +182,15 @@
     <div class="logo">ZenIRL</div>
     <p class="tagline">Mindful apps for a calmer life</p>
 
+    <h2 class="section-heading">Apps</h2>
     <div class="apps">
         <div class="app-card">
             <div class="app-icon bloom">🌸</div>
             <h2 class="app-name">Bloom</h2>
             <p class="app-tagline">Capture 1.5 seconds of life daily.<br>Weekly cinematic recap.</p>
             <div class="app-links">
-                <a href="https://play.google.com/store/apps/details?id=com.zencan.bloom" class="bloom-primary" target="_blank">Get on Play Store</a>
-                <a href="bloomapp/privacy.html">Privacy Policy</a>
+                <a href="https://play.google.com/store/apps/details?id=com.zencan.bloom" class="bloom-primary" target="_blank" rel="noopener">Get on Play Store</a>
+                <a href="bloomapp/privacy.html">Privacy policy</a>
             </div>
         </div>
 
@@ -167,8 +199,103 @@
             <h2 class="app-name">Empty</h2>
             <p class="app-tagline">One sentence a day.<br>Reveal at year's end.</p>
             <div class="app-links">
-                <a href="https://play.google.com/store/apps/details?id=com.zencan.empty" class="primary" target="_blank">Get on Play Store</a>
-                <a href="empty/privacy.html">Privacy Policy</a>
+                <a href="https://play.google.com/store/apps/details?id=com.zencan.empty" class="primary" target="_blank" rel="noopener">Get on Play Store</a>
+                <a href="empty/privacy.html">Privacy policy</a>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-heading">Watch games</h2>
+    <div class="apps">
+        <!-- Published — direct Play Store links -->
+        <div class="app-card">
+            <div class="app-icon asteroids">☄️</div>
+            <h2 class="app-name">Asteroid Field</h2>
+            <p class="app-tagline">Spin the crown to dodge rocks.<br>How long can you last?</p>
+            <div class="app-links">
+                <a href="https://play.google.com/store/apps/details?id=com.zenirl.asteroids" class="primary" target="_blank" rel="noopener">Get on Play Store</a>
+                <a href="https://zenirl.github.io/policies/asteroids.html">Privacy policy</a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <div class="app-icon beat">🎵</div>
+            <h2 class="app-name">Haptic Beat</h2>
+            <p class="app-tagline">Feel the beat in your wrist.<br>Tap on time.</p>
+            <div class="app-links">
+                <a href="https://play.google.com/store/apps/details?id=com.zenirl.beat" class="primary" target="_blank" rel="noopener">Get on Play Store</a>
+                <a href="https://zenirl.github.io/policies/beat.html">Privacy policy</a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <div class="app-icon defense">🔮</div>
+            <h2 class="app-name">Sphere Defense</h2>
+            <p class="app-tagline">Defend the orb from incoming waves.<br>One sweep at a time.</p>
+            <div class="app-links">
+                <a href="https://play.google.com/store/apps/details?id=com.zenirl.defense" class="primary" target="_blank" rel="noopener">Get on Play Store</a>
+                <a href="https://zenirl.github.io/policies/defense.html">Privacy policy</a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <div class="app-icon snake">🐍</div>
+            <h2 class="app-name">Crown Snake</h2>
+            <p class="app-tagline">Classic snake.<br>Twist of the crown.</p>
+            <div class="app-links">
+                <a href="https://play.google.com/store/apps/details?id=com.zenirl.snake" class="primary" target="_blank" rel="noopener">Get on Play Store</a>
+                <a href="https://zenirl.github.io/policies/snake.html">Privacy policy</a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <div class="app-icon spell">✨</div>
+            <h2 class="app-name">Spell Caster</h2>
+            <p class="app-tagline">Trace runes. Cast spells.<br>Be the wizard.</p>
+            <div class="app-links">
+                <a href="https://play.google.com/store/apps/details?id=com.zenirl.spell" class="primary" target="_blank" rel="noopener">Get on Play Store</a>
+                <a href="https://zenirl.github.io/policies/spell.html">Privacy policy</a>
+            </div>
+        </div>
+
+        <!-- Not yet published — Coming soon label, privacy page already live -->
+        <div class="app-card">
+            <div class="app-icon lockpick">🔓</div>
+            <h2 class="app-name">Crown Lockpick</h2>
+            <p class="app-tagline">Feel the pins.<br>Pick the lock.</p>
+            <div class="app-links">
+                <span class="coming-soon">Coming soon</span>
+                <a href="https://zenirl.github.io/policies/lockpick.html">Privacy policy</a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <div class="app-icon morse">⋮</div>
+            <h2 class="app-name">Morse Tap</h2>
+            <p class="app-tagline">Tap dots and dashes.<br>Learn the code.</p>
+            <div class="app-links">
+                <span class="coming-soon">Coming soon</span>
+                <a href="https://zenirl.github.io/policies/morse.html">Privacy policy</a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <div class="app-icon pinball">🎱</div>
+            <h2 class="app-name">Crown Pinball</h2>
+            <p class="app-tagline">Pinball tuned to your wrist.<br>Crown for the flippers.</p>
+            <div class="app-links">
+                <span class="coming-soon">Coming soon</span>
+                <a href="https://zenirl.github.io/policies/pinball.html">Privacy policy</a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <div class="app-icon safecracker">🔐</div>
+            <h2 class="app-name">Safecracker</h2>
+            <p class="app-tagline">Listen for the click.<br>Crack the safe.</p>
+            <div class="app-links">
+                <span class="coming-soon">Coming soon</span>
+                <a href="https://zenirl.github.io/policies/safecracker.html">Privacy policy</a>
             </div>
         </div>
     </div>
