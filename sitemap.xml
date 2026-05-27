@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://zenirl.github.io/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url><loc>https://zenirl.github.io/games/asteroid-field/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zenirl.github.io/games/haptic-beat/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zenirl.github.io/games/sphere-defense/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zenirl.github.io/games/crown-snake/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zenirl.github.io/games/spell-caster/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zenirl.github.io/games/crown-lockpick/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zenirl.github.io/games/morse-tap/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zenirl.github.io/games/crown-pinball/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zenirl.github.io/games/safecracker/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>
