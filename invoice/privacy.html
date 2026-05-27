@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Quick Invoice</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: #1A1A1A; color: #F5F2E8; line-height: 1.8; padding: 40px 20px; }
+        .container { max-width: 700px; margin: 0 auto; }
+        .back-link { color: #6FA8DC; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 40px; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 32px; font-weight: 300; margin-bottom: 8px; letter-spacing: 2px; }
+        .app-name { color: #6FA8DC; font-size: 18px; margin-bottom: 8px; }
+        .updated { color: #666; font-size: 14px; margin-bottom: 40px; }
+        h2 { font-size: 20px; font-weight: 500; margin-top: 40px; margin-bottom: 16px; color: #6FA8DC; }
+        h3 { font-size: 16px; font-weight: 500; margin-top: 24px; margin-bottom: 12px; color: #F5F2E8; }
+        p { color: #A8A8A8; margin-bottom: 16px; }
+        ul { color: #A8A8A8; margin-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: #F5F2E8; }
+        a { color: #6FA8DC; }
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #333; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← Back to ZenIRL</a>
+
+        <p class="app-name">🧾 Quick Invoice</p>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last Updated: May 26, 2026</p>
+
+        <h2>Summary</h2>
+        <p>Quick Invoice is <strong>local-first</strong>. Your business profile, customers, invoices, line items, and photos live only on your device by default. The app does not collect analytics, does not run a crash reporter, and does not transmit any data unless you explicitly enable Cloud backup in Settings.</p>
+
+        <h2>Data Stored on Your Device</h2>
+        <ul>
+            <li>Business profile (name, address, phone, email, tax ID, UPI ID, default tax rate, default notes)</li>
+            <li>Customers (name, phone, email, address)</li>
+            <li>Invoices and estimates (numbers, items, totals, due dates, paid status, partial payments, notes)</li>
+            <li>Service catalog (saved line items)</li>
+            <li>Photos you attach to invoices</li>
+            <li>Your business logo</li>
+        </ul>
+        <p>Stored in the app's private Room database (<code>invoice.db</code>) and private file directories. Included in your Android system backup (Google Drive) if you have that turned on — restored automatically on a new device. We never see this data.</p>
+
+        <h2>Cloud Backup (Opt-In)</h2>
+        <p>If you turn on <strong>Cloud backup</strong> in Settings, the app:</p>
+        <ul>
+            <li>Signs you in <strong>anonymously</strong> to Firebase Authentication (no email or password — just a random user ID).</li>
+            <li>Periodically syncs your invoices and customers to a private Firestore document keyed on that anonymous user ID.</li>
+            <li>Stops syncing the moment you toggle Cloud backup off.</li>
+        </ul>
+        <p>What goes up: the same data listed above <strong>except photos and your logo</strong> — those always stay on the device. The cloud backup is one-way (device → cloud).</p>
+        <p>Backup goes to the Firebase project <code>invoice-zenirl</code>. We do not sell, share, or use this data for advertising.</p>
+
+        <h2>Payment Requests</h2>
+        <p>Tapping <strong>Request payment via UPI</strong> launches your UPI app (Google Pay, PhonePe, Paytm, etc.) with a pre-filled <code>upi://pay</code> deep link. The payment happens inside the UPI app — Quick Invoice never sees the transaction.</p>
+
+        <h2>Sharing Invoices</h2>
+        <p>When you share a PDF via WhatsApp, email, or any other app, the file is written to the app's private cache and handed off to the Android share sheet for the app you pick. Nothing uploads through us.</p>
+
+        <h2>Information We Do NOT Collect</h2>
+        <ul>
+            <li>Personal identification beyond the anonymous Firebase user ID (only when Cloud backup is on)</li>
+            <li>Location data</li>
+            <li>Device identifiers</li>
+            <li>Usage analytics or tracking</li>
+            <li>Photos or logos (these never leave the device)</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>Quick Invoice is a business tool intended for adults. It does not target users under 13.</p>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>If we update this policy, the "Last Updated" date above will change. Material changes will also be surfaced in-app.</p>
+
+        <h2>Contact</h2>
+        <p><strong>Email:</strong> <a href="mailto:zencandev@gmail.com">zencandev@gmail.com</a></p>
+        <p><strong>Developer:</strong> ZenIRL</p>
+
+        <footer>
+            <p>Quick Invoice — Tradesman + freelancer invoicing</p>
+        </footer>
+    </div>
+</body>
+</html>

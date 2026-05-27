@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Cycle</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: #1A1A1A; color: #F5F2E8; line-height: 1.8; padding: 40px 20px; }
+        .container { max-width: 700px; margin: 0 auto; }
+        .back-link { color: #E89AB5; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 40px; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 32px; font-weight: 300; margin-bottom: 8px; letter-spacing: 2px; }
+        .app-name { color: #E89AB5; font-size: 18px; margin-bottom: 8px; }
+        .updated { color: #666; font-size: 14px; margin-bottom: 40px; }
+        h2 { font-size: 20px; font-weight: 500; margin-top: 40px; margin-bottom: 16px; color: #E89AB5; }
+        p { color: #A8A8A8; margin-bottom: 16px; }
+        ul { color: #A8A8A8; margin-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; }
+        strong { color: #F5F2E8; }
+        a { color: #E89AB5; }
+        .lede { background: #2C1B22; border-left: 3px solid #E89AB5; padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 24px; color: #F5F2E8; }
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #333; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← Back to ZenIRL</a>
+
+        <p class="app-name">🌙 Cycle</p>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last Updated: May 26, 2026</p>
+
+        <div class="lede">
+            <p><strong>Your data stays on your phone. We can't see it because there is no server.</strong></p>
+            <p style="margin: 0;">Cycle has no internet permission, no account, no cloud, no analytics, no ads, no third-party SDKs that phone home.</p>
+        </div>
+
+        <h2>Data Stored on Your Device</h2>
+        <ul>
+            <li>Cycles (start date, end date, notes)</li>
+            <li>Daily logs (flow, symptoms, mood, temperature, sexual-activity flag, notes)</li>
+            <li>Settings (average cycle override, reminder lead days, PIN hash + salt)</li>
+        </ul>
+        <p>Stored in the app's private Room database (<code>cycle.db</code>) and SharedPreferences. The database and preferences are explicitly <strong>excluded</strong> from Android cloud backup — they only travel between your devices via direct device-transfer.</p>
+
+        <h2>Notifications</h2>
+        <p>If you enable reminders, a daily background worker checks predictions on-device and posts a local notification when your period is predicted in N days or on the predicted ovulation day. No data leaves the device.</p>
+
+        <h2>PIN Lock</h2>
+        <p>If you set a PIN, it is hashed with PBKDF2-HMAC-SHA256 (100,000 iterations, random 16-byte salt) before being stored. The hash and salt are kept in the app's private SharedPreferences. The plaintext PIN is never stored.</p>
+
+        <h2>Sharing CSV</h2>
+        <p>When you tap Export CSV, the file is written to the app's private cache and handed to the Android share sheet for an app you pick. Nothing uploads through us.</p>
+
+        <h2>Information We Do NOT Collect</h2>
+        <ul>
+            <li>Personal identification</li>
+            <li>Location data</li>
+            <li>Device identifiers</li>
+            <li>Cycle data, symptoms, mood, or temperature data — these never leave your device</li>
+            <li>Usage analytics or tracking</li>
+            <li>Crash reports</li>
+        </ul>
+
+        <h2>Why This Matters</h2>
+        <p>Cycle data is sensitive. We built Cycle so that there is no third party — not us, not an advertiser, not a data broker — who can see your health information, because the data physically does not travel anywhere outside your phone.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>Cycle is intended for menstruating adolescents and adults tracking their own bodies. We do not collect any data, so there is no data collection to consent to.</p>
+
+        <h2>Contact</h2>
+        <p><strong>Email:</strong> <a href="mailto:zencandev@gmail.com">zencandev@gmail.com</a></p>
+        <p><strong>Developer:</strong> ZenIRL</p>
+
+        <footer>
+            <p>Cycle — Privacy-first period &amp; cycle tracking</p>
+        </footer>
+    </div>
+</body>
+</html>
