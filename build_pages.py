@@ -195,7 +195,7 @@ GAMES: list[Game] = [
     Game(
         slug="crown-lockpick",
         name="Crown Lockpick",
-        package=None,  # unpublished
+        package="com.zenirl.lockpick",
         category="Puzzle",
         schema_category="GameApplication",
         short_desc="Lockpicking heist for Wear OS, played by haptic feel. Sweep the crown, listen for the buzz, crack five locks before the alarm.",
@@ -226,7 +226,7 @@ GAMES: list[Game] = [
     Game(
         slug="morse-tap",
         name="Morse Tap",
-        package=None,
+        package="com.zenirl.morse",
         category="Puzzle",
         schema_category="GameApplication",
         short_desc="Learn Morse code by feel on Wear OS. The watch buzzes a short word; tap it back dit by dah. A trainer disguised as a puzzle.",
@@ -288,7 +288,7 @@ GAMES: list[Game] = [
     Game(
         slug="safecracker",
         name="Safecracker",
-        package=None,
+        package="com.zenirl.safecracker",
         category="Puzzle",
         schema_category="GameApplication",
         short_desc="Combination-lock puzzle for Wear OS. Spin the crown, feel the gate buzz, crack five safes before the alarm. Haptic-first, offline.",
