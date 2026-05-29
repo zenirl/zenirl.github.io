@@ -257,7 +257,7 @@ GAMES: list[Game] = [
     Game(
         slug="crown-pinball",
         name="Crown Pinball",
-        package=None,
+        package="com.zenirl.pinball",
         category="Arcade",
         schema_category="GameApplication",
         short_desc="Pinball for Wear OS. The crown is the paddle. Real ball physics, coloured bumpers, multipliers up to x8. Standalone, offline, ad-free.",
@@ -414,7 +414,6 @@ def render_game(g: Game) -> str:
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#available">Games</a>
-        <a href="/#coming">Coming soon</a>
       </nav>
     </div>
   </header>
