@@ -1,11 +1,12 @@
 """
-Generate /games/<slug>/index.html for every ZenIRL watch game.
+Generate /games/<slug>/ and /apps/<slug>/ index.html for every ZenIRL title.
 
 Run from the zenirl.github.io repo root:
     python3 build_pages.py
 
-The script is the only place per-game metadata lives. Need to edit a tagline?
-Touch GAMES, re-run, done. Avoids hand-syncing nine near-identical files.
+The script is the only place per-title metadata lives. Need to edit a tagline?
+Touch GAMES (or APPS), re-run, done. Avoids hand-syncing near-identical files.
+Games render under /games/, apps (kind="app") under /apps/.
 """
 
 from __future__ import annotations
@@ -29,6 +30,7 @@ class Game:
     tags: list[str]         # pills (e.g. "Crown", "Arcade")
     accent: str             # CSS color for primary button background
     accent_hover: str
+    kind: str = "game"      # "game" → /games/<slug>/, "app" → /apps/<slug>/
     accent_text: str = "#F5F2E8"
     privacy_url: str = ""   # zenirl.github.io/policies/<x>.html
     paragraphs: list[str] = field(default_factory=list)
@@ -319,11 +321,50 @@ GAMES: list[Game] = [
 ]
 
 
+APPS: list[Game] = [
+    Game(
+        slug="step-pet",
+        name="Step Pet",
+        package="com.zenirl.stepapp",
+        kind="app",
+        category="Health & Fitness",
+        schema_category="HealthApplication",
+        short_desc="Walk to raise a tiny pet on your watch — a step counter that's actually fun. Your steps grow it, dress it, and send it on adventures. Offline, ad-free.",
+        tagline="Walk to raise a tiny pet on your wrist. A step counter that's actually fun.",
+        tags=["Health & Fitness", "Steps", "Virtual pet"],
+        accent="#43A047", accent_hover="#58B45B", accent_text="#1A1A1A",
+        privacy_url="https://zenirl.github.io/policies/steppet.html",
+        paragraphs=[
+            "Your watch already counts your steps. Step Pet gives them a point. Every walk feeds a tiny creature that lives on your wrist — earning coins, sending it on little adventures, and slowly raising it from a speckled egg into a fully grown companion. No phone required.",
+            "Spend the coins you earn in a shop of hats, scarves, glasses and crowns. Hit your daily step goal to send your pet on an adventure — it comes back with a short story and a treasure. Keep a daily streak going for bonus rewards. Your pet grows through five stages — Egg, Baby, Kid, Teen, Adult — and reaching Adult takes about a month of real walking. Raise all six species; once one grows up, adopt the next.",
+            "Gentle by design: there’s no failure state and no nagging — your pet never dies, and you’ll get at most one friendly notification a day. A glanceable Tile shows your pet, today’s steps and progress to goal; a watch-face complication gives you a steps-to-goal ring you can tap to open the app. Drawn entirely in code, so it stays crisp on any round screen. Works completely offline — no internet permission, no accounts, no ads, no tracking.",
+        ],
+        features=[
+            ("Steps raise your pet", "Real step count from your watch — no phone needed."),
+            ("Coins & shop", "Earn coins as you walk; spend them on hats, scarves, glasses and crowns."),
+            ("Daily adventures", "Hit your step goal to send your pet off — it returns with a story and treasure."),
+            ("Growth & streaks", "Five stages from Egg to Adult, six species to raise, streak rewards for showing up."),
+            ("Tile + complication", "A glanceable Tile and a tappable steps-to-goal ring on your watch face."),
+            ("Private & offline", "No internet permission, no accounts, no ads, no tracking."),
+        ],
+        screenshot_alts=[
+            "Step Pet home — your pet with today’s steps and progress to goal",
+            "The shop — cosmetics you can buy with earned coins",
+            "An adventure result with a short story and treasure",
+            "The species family — six pets to raise",
+        ],
+    ),
+]
+
+
 def render_game(g: Game) -> str:
+    base = "apps" if g.kind == "app" else "games"          # URL + asset namespace
+    nav_href, nav_label = ("/#apps", "Apps") if g.kind == "app" else ("/#available", "Games")
+    all_label = "All apps" if g.kind == "app" else "All games"
     play_url = f"https://play.google.com/store/apps/details?id={g.package}" if g.package else None
-    canonical = f"{BASE_URL}/games/{g.slug}/"
-    icon_url = f"{BASE_URL}/assets/games/{g.slug}/icon.png"
-    feature_url = f"{BASE_URL}/assets/games/{g.slug}/feature.png"
+    canonical = f"{BASE_URL}/{base}/{g.slug}/"
+    icon_url = f"{BASE_URL}/assets/{base}/{g.slug}/icon.png"
+    feature_url = f"{BASE_URL}/assets/{base}/{g.slug}/feature.png"
     title = f"{g.name} — {g.category} for Wear OS · ZenIRL"
 
     # JSON-LD MobileApplication. Conditionally include offers for published apps.
@@ -368,7 +409,7 @@ def render_game(g: Game) -> str:
     )
 
     screenshots = "\n          ".join(
-        f'<figure class="bezel"><img loading="lazy" src="/assets/games/{g.slug}/screenshot-{i+1}.png" alt="{alt}" width="220" height="220"></figure>'
+        f'<figure class="bezel"><img loading="lazy" src="/assets/{base}/{g.slug}/screenshot-{i+1}.png" alt="{alt}" width="220" height="220"></figure>'
         for i, alt in enumerate(g.screenshot_alts)
     )
 
@@ -413,14 +454,14 @@ def render_game(g: Game) -> str:
     <div class="container">
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
-        <a href="/#available">Games</a>
+        <a href="{nav_href}">{nav_label}</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <section class="container game-hero">
-      <img class="game-icon" src="/assets/games/{g.slug}/icon.png" alt="{g.name} app icon" width="160" height="160">
+      <img class="game-icon" src="/assets/{base}/{g.slug}/icon.png" alt="{g.name} app icon" width="160" height="160">
       <div>
         <h1>{g.name}</h1>
         <p class="tagline">{g.tagline}</p>
@@ -453,7 +494,7 @@ def render_game(g: Game) -> str:
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2026 ZenIRL · <a href="mailto:zencandev@gmail.com">zencandev@gmail.com</a></p>
-      <p><a href="/">All games</a></p>
+      <p><a href="/">{all_label}</a></p>
     </div>
   </footer>
 </body>
@@ -462,8 +503,9 @@ def render_game(g: Game) -> str:
 
 
 def main() -> None:
-    for g in GAMES:
-        out_dir = os.path.join(ROOT, "games", g.slug)
+    for g in GAMES + APPS:
+        base = "apps" if g.kind == "app" else "games"
+        out_dir = os.path.join(ROOT, base, g.slug)
         os.makedirs(out_dir, exist_ok=True)
         out_path = os.path.join(out_dir, "index.html")
         with open(out_path, "w", encoding="utf-8") as f:
