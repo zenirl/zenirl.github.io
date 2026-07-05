@@ -350,7 +350,7 @@ GAMES: list[Game] = [
     Game(
         slug="crown-darts",
         name="Crown Darts",
-        package=None,
+        package="com.zenirl.darts",
         category="Arcade",
         schema_category="GameApplication",
         short_desc="Darts for Wear OS. The crown aims around a real dartboard; a power marker times your throw. Nine darts, score big on triples and the bull.",
@@ -378,7 +378,7 @@ GAMES: list[Game] = [
     Game(
         slug="helix-drop",
         name="Helix Drop",
-        package=None,
+        package="com.zenirl.helix",
         category="Arcade",
         schema_category="GameApplication",
         short_desc="Helix ball-drop for Wear OS. The ball falls on its own; spin the crown to line up the gaps and thread it inward. Avoid the red rings.",
@@ -498,7 +498,7 @@ APPS: list[Game] = [
     Game(
         slug="bubble-level",
         name="Bubble Level",
-        package=None,
+        package="com.zenirl.level",
         kind="app",
         category="Tools",
         schema_category="UtilitiesApplication",
