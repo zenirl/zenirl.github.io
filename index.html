@@ -58,6 +58,44 @@
   </header>
 
   <main id="main">
+
+    <section class="hero-slider" aria-label="Featured games" aria-roledescription="carousel">
+      <div class="hero-track">
+
+        <div class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 2: Crown Snake">
+          <div class="slide-content">
+            <span class="slide-eyebrow">Fan favourite</span>
+            <h2 class="slide-title">Crown Snake</h2>
+            <p class="slide-copy">The arcade classic, reborn on your wrist. Twist the crown, chase the tail, and beat your best — offline, no phone needed.</p>
+            <a class="btn" href="/games/crown-snake/">Play Crown Snake</a>
+          </div>
+          <div class="slide-art">
+            <div class="bezel"><img src="/assets/games/crown-snake/screenshot-1.png" alt="Crown Snake gameplay on a Wear OS watch" width="480" height="480" loading="lazy"></div>
+          </div>
+        </div>
+
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 2: Helix Drop">
+          <div class="slide-content">
+            <span class="slide-eyebrow">Fresh drop · now live</span>
+            <h2 class="slide-title">Helix Drop</h2>
+            <p class="slide-copy">Spin the crown to thread the falling ball through every gap. Fast, hypnotic, and brand-new on Wear OS.</p>
+            <a class="btn" href="/games/helix-drop/">Play Helix Drop</a>
+          </div>
+          <div class="slide-art">
+            <div class="bezel"><img src="/assets/games/helix-drop/screenshot-1.png" alt="Helix Drop gameplay on a Wear OS watch" width="480" height="480" loading="lazy"></div>
+          </div>
+        </div>
+
+        <button class="hero-nav hero-prev" type="button" aria-label="Previous slide">&#8249;</button>
+        <button class="hero-nav hero-next" type="button" aria-label="Next slide">&#8250;</button>
+        <div class="hero-dots" role="tablist" aria-label="Choose slide">
+          <button type="button" aria-current="true" aria-label="Crown Snake"></button>
+          <button type="button" aria-current="false" aria-label="Helix Drop"></button>
+        </div>
+
+      </div>
+    </section>
+
     <section class="container hero">
       <h1>ZenIRL</h1>
       <p class="lede">A small studio making games and apps for your wrist.</p>
@@ -260,5 +298,30 @@
       <p>Privacy policies are linked from each game page.</p>
     </div>
   </footer>
+
+  <script>
+  (function () {
+    var root = document.querySelector('.hero-slider');
+    if (!root) return;
+    var slides = [].slice.call(root.querySelectorAll('.hero-slide'));
+    var dots = [].slice.call(root.querySelectorAll('.hero-dots button'));
+    if (slides.length < 2) return;
+    var i = 0, timer = null;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, x) { s.classList.toggle('is-active', x === i); });
+      dots.forEach(function (d, x) { d.setAttribute('aria-current', x === i ? 'true' : 'false'); });
+    }
+    function start() { if (reduce) return; stop(); timer = setInterval(function () { show(i + 1); }, 6000); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    dots.forEach(function (d, x) { d.addEventListener('click', function () { show(x); start(); }); });
+    root.querySelector('.hero-prev').addEventListener('click', function () { show(i - 1); start(); });
+    root.querySelector('.hero-next').addEventListener('click', function () { show(i + 1); start(); });
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    start();
+  })();
+  </script>
 </body>
 </html>
