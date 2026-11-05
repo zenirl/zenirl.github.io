@@ -98,6 +98,15 @@
       <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
+    <section class="container clip" aria-labelledby="clip-h">
+      <h2 class="section-heading" id="clip-h">In motion</h2>
+      <figure class="bezel">
+        <video muted loop playsinline preload="none" width="480" height="480" poster="/assets/games/orbital/screenshot-1.webp" aria-label="Orbital gameplay clip, no sound" data-clip>
+          <source src="/assets/games/orbital/clip.mp4" type="video/mp4">
+        </video><span class="sheen"></span>
+      </figure>
+      <p>Silent gameplay clip. Plays while on screen.</p>
+    </section>
     <article class="container prose">
       <p>A one-finger slingshot puzzle for the crown. You are a comet circling a planet. Turn the crown, or drag up and down, to widen or tighten your orbit: a tighter orbit is faster. Tap to let go. A trail of dots shows exactly where you will fly, so the game is about timing, not guessing.</p>
       <p>Fly to the next world and your comet freezes on its new orbit. Grab stardust to refreeze your comet on the way, dodge rocks and moons, and dive into the wormhole to finish the system. You get three comets. Each crash costs one.</p>
@@ -125,5 +134,19 @@
     </div>
   </footer>
 
+  <script>
+  (function () {
+    var v = document.querySelector('video[data-clip]');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.controls = true; return; }
+    if (!('IntersectionObserver' in window)) { v.controls = true; return; }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function (err) { if (err && err.name === 'NotAllowedError') v.controls = true; }); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
+  })();
+  </script>
 </body>
 </html>

@@ -100,6 +100,15 @@
       <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
+    <section class="container clip" aria-labelledby="clip-h">
+      <h2 class="section-heading" id="clip-h">In motion</h2>
+      <figure class="bezel">
+        <video muted loop playsinline preload="none" width="480" height="480" poster="/assets/games/crown-darts/screenshot-1.webp" aria-label="Crown Darts gameplay clip, no sound" data-clip>
+          <source src="/assets/games/crown-darts/clip.mp4" type="video/mp4">
+        </video><span class="sheen"></span>
+      </figure>
+      <p>Silent gameplay clip. Plays while on screen.</p>
+    </section>
     <article class="container prose">
       <p>A full dartboard on your wrist — twenty sectors in the right order, double and triple rings, outer and inner bull. The crown swings your aim around the board while a power marker sweeps from centre to edge. Tap at the right instant and the dart lands where aim meets power.</p>
       <p>Score Attack gives you nine darts to rack up the highest total. Triple-twenty and the bullseye are there for the taking — if your timing is sharp. Persistent best score, fully offline.</p>
@@ -134,6 +143,20 @@
     new IntersectionObserver(function (es) {
       bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
     }).observe(hero);
+  })();
+  </script>
+  <script>
+  (function () {
+    var v = document.querySelector('video[data-clip]');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.controls = true; return; }
+    if (!('IntersectionObserver' in window)) { v.controls = true; return; }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function (err) { if (err && err.name === 'NotAllowedError') v.controls = true; }); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
   })();
   </script>
 </body>

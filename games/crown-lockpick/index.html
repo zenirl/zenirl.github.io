@@ -101,6 +101,15 @@
       <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
+    <section class="container clip" aria-labelledby="clip-h">
+      <h2 class="section-heading" id="clip-h">In motion</h2>
+      <figure class="bezel">
+        <video muted loop playsinline preload="none" width="480" height="480" poster="/assets/games/crown-lockpick/screenshot-1.webp" aria-label="Crown Lockpick gameplay clip, no sound" data-clip>
+          <source src="/assets/games/crown-lockpick/clip.mp4" type="video/mp4">
+        </video><span class="sheen"></span>
+      </figure>
+      <p>Silent gameplay clip. Plays while on screen.</p>
+    </section>
     <article class="container prose">
       <p>Five locks in a row. Crack them all to breach the vault. Fail one and the alarm trips. Each lock raises the stakes — Padlock with three pins and wide tolerance, Deadbolt with decoys, Safe with narrower zones, Master with pins picked in random order, then Vault: six pins, tightest tolerances, sixty seconds.</p>
       <p>Turn the crown to sweep a virtual pick around the dial. When the pick crosses a real pin’s set zone, the watch fires a hot haptic pulse on your wrist. That pulse is the entire game — find that spot again, hold the crown still, and if it keeps pulsing you’ve got the real pin. Tap to commit.</p>
@@ -137,6 +146,20 @@
     new IntersectionObserver(function (es) {
       bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
     }).observe(hero);
+  })();
+  </script>
+  <script>
+  (function () {
+    var v = document.querySelector('video[data-clip]');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.controls = true; return; }
+    if (!('IntersectionObserver' in window)) { v.controls = true; return; }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function (err) { if (err && err.name === 'NotAllowedError') v.controls = true; }); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
   })();
   </script>
 </body>

@@ -100,6 +100,15 @@
       <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
+    <section class="container clip" aria-labelledby="clip-h">
+      <h2 class="section-heading" id="clip-h">In motion</h2>
+      <figure class="bezel">
+        <video muted loop playsinline preload="none" width="480" height="480" poster="/assets/games/memory-buzz/screenshot-1.webp" aria-label="Memory Buzz gameplay clip, no sound" data-clip>
+          <source src="/assets/games/memory-buzz/clip.mp4" type="video/mp4">
+        </video><span class="sheen"></span>
+      </figure>
+      <p>Silent gameplay clip. Plays while on screen.</p>
+    </section>
     <article class="container prose">
       <p>Simon, reimagined for the wrist. Four coloured quadrants ring the screen, and each one has its own vibration signature — so you can follow the growing sequence partly by feel, not just by sight.</p>
       <p>Watch and feel the pattern, then tap the colours back in order. Get it right and the sequence grows by one; a single wrong tap ends the run. How long a sequence can you hold? Offline, with a persistent high score.</p>
@@ -134,6 +143,20 @@
     new IntersectionObserver(function (es) {
       bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
     }).observe(hero);
+  })();
+  </script>
+  <script>
+  (function () {
+    var v = document.querySelector('video[data-clip]');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.controls = true; return; }
+    if (!('IntersectionObserver' in window)) { v.controls = true; return; }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function (err) { if (err && err.name === 'NotAllowedError') v.controls = true; }); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
   })();
   </script>
 </body>

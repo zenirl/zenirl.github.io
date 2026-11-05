@@ -98,6 +98,15 @@
       <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
+    <section class="container clip" aria-labelledby="clip-h">
+      <h2 class="section-heading" id="clip-h">In motion</h2>
+      <figure class="bezel">
+        <video muted loop playsinline preload="none" width="480" height="480" poster="/assets/games/beacon/screenshot-1.webp" aria-label="Beacon gameplay clip, no sound" data-clip>
+          <source src="/assets/games/beacon/clip.mp4" type="video/mp4">
+        </video><span class="sheen"></span>
+      </figure>
+      <p>Silent gameplay clip. Plays while on screen.</p>
+    </section>
     <article class="container prose">
       <p>You are in the lighthouse. Ships steer for whatever your beam lights up, and your job is to bring every one of them home to the quay. Turn the crown to swing the beam, or touch and drag on the sea.</p>
       <p>A lit ship steers for the quay. Leave it in the dark and it holds its course only so long, shown by a ring around the ship. Light it again before it runs out. Tap the lighthouse to sound the horn and slow every ship. Blasts are few: dock five ships to earn one.</p>
@@ -125,5 +134,19 @@
     </div>
   </footer>
 
+  <script>
+  (function () {
+    var v = document.querySelector('video[data-clip]');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.controls = true; return; }
+    if (!('IntersectionObserver' in window)) { v.controls = true; return; }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function (err) { if (err && err.name === 'NotAllowedError') v.controls = true; }); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
+  })();
+  </script>
 </body>
 </html>

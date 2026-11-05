@@ -101,6 +101,15 @@
       <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
+    <section class="container clip" aria-labelledby="clip-h">
+      <h2 class="section-heading" id="clip-h">In motion</h2>
+      <figure class="bezel">
+        <video muted loop playsinline preload="none" width="480" height="480" poster="/assets/games/crown-pinball/screenshot-1.webp" aria-label="Crown Pinball gameplay clip, no sound" data-clip>
+          <source src="/assets/games/crown-pinball/clip.mp4" type="video/mp4">
+        </video><span class="sheen"></span>
+      </figure>
+      <p>Silent gameplay clip. Plays while on screen.</p>
+    </section>
     <article class="container prose">
       <p>Pinball redesigned for a round screen and a rotary crown. The crown rotates a glowing paddle around the bottom arc of the bezel — the kind of analog control idea you can only really pull off on a watch. The entire round face is the table; no wasted real estate.</p>
       <p>Three bumpers cluster in the upper half — yellow standard, red hot for big points, blue cool. Hit the same bumper repeatedly and your multiplier climbs from x1 all the way to x8. Chain five bumpers without losing the ball and the paddle widens for six seconds. The only second chance you get.</p>
@@ -137,6 +146,20 @@
     new IntersectionObserver(function (es) {
       bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
     }).observe(hero);
+  })();
+  </script>
+  <script>
+  (function () {
+    var v = document.querySelector('video[data-clip]');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.controls = true; return; }
+    if (!('IntersectionObserver' in window)) { v.controls = true; return; }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function (err) { if (err && err.name === 'NotAllowedError') v.controls = true; }); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
   })();
   </script>
 </body>

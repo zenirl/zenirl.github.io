@@ -101,6 +101,15 @@
       <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
+    <section class="container clip" aria-labelledby="clip-h">
+      <h2 class="section-heading" id="clip-h">In motion</h2>
+      <figure class="bezel">
+        <video muted loop playsinline preload="none" width="480" height="480" poster="/assets/games/sphere-defense/screenshot-1.webp" aria-label="Sphere Defense gameplay clip, no sound" data-clip>
+          <source src="/assets/games/sphere-defense/clip.mp4" type="video/mp4">
+        </video><span class="sheen"></span>
+      </figure>
+      <p>Silent gameplay clip. Plays while on screen.</p>
+    </section>
     <article class="container prose">
       <p>Your core sits at the centre. Enemies stream in from the bezel — basic red, slow heavy orange tanks, and fast blue sprinters. The crown rotates a glowing shield arc around your core; tap to fire a bullet in the direction the shield is facing. Two inputs, both used at once.</p>
       <p>The shield doesn’t destroy — it bounces. The tap kills. The combination is the whole game: hold the shield against a tank while picking off sprinters with bullets, sweep the shield through clusters to deflect them away from the core, save your bullets for the ones too fast to bounce.</p>
@@ -137,6 +146,20 @@
     new IntersectionObserver(function (es) {
       bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
     }).observe(hero);
+  })();
+  </script>
+  <script>
+  (function () {
+    var v = document.querySelector('video[data-clip]');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.controls = true; return; }
+    if (!('IntersectionObserver' in window)) { v.controls = true; return; }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function (err) { if (err && err.name === 'NotAllowedError') v.controls = true; }); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
   })();
   </script>
 </body>
