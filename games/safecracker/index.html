@@ -6,8 +6,10 @@
   <title>Safecracker — Puzzle for Wear OS · ZenIRL</title>
   <meta name="description" content="Combination-lock puzzle for Wear OS. Spin the crown, feel the gate buzz, crack five safes before the alarm. Haptic-first, offline.">
   <link rel="canonical" href="https://zenirl.github.io/games/safecracker/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/games/safecracker/screenshot-1.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Safecracker — Puzzle for Wear OS · ZenIRL">
@@ -49,7 +51,7 @@
     }
   </style>
 </head>
-<body>
+<body class="has-sticky">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="site-header">
@@ -57,26 +59,46 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#available">Games</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/games/safecracker/icon.png" alt="Safecracker app icon" width="160" height="160">
-      <div>
-        <h1>Safecracker</h1>
-        <p class="tagline">Combination-lock puzzle for Wear OS. Spin the crown. Feel the gate buzz.</p>
-        <div class="tag-row">
-          <span class="tag">Puzzle</span>
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="/assets/games/safecracker/icon.png" alt="Safecracker app icon" width="84" height="84">
+            <h1>Safecracker</h1>
+          </div>
+          <p class="tagline">Combination-lock puzzle for Wear OS. Spin the crown. Feel the gate buzz.</p>
+          <div class="tag-row">
+            <span class="tag">Puzzle</span>
           <span class="tag">Crown</span>
           <span class="tag">Haptic</span>
-        </div>
-        <div class="cta-row">
-        <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.safecracker" rel="noopener" target="_blank">Get on Google Play</a>
+          </div>
+          <div class="cta-row">
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.safecracker" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/safecracker.html">Privacy policy</a>
+          </div>
         </div>
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="/assets/games/safecracker/screenshot-1.webp" alt="Safecracker wall safe — ten numbers on the dial" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="Safecracker screenshots, scrollable" tabindex="0">
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/safecracker/screenshot-1.webp" alt="Safecracker wall safe — ten numbers on the dial" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/safecracker/screenshot-2.webp" alt="Vault safe with finer ticks and four-digit combo" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/safecracker/screenshot-3.webp" alt="Locked digit indicator showing direction flip" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/safecracker/screenshot-4.webp" alt="Heist complete after all five safes cracked" width="480" height="480"><span class="sheen"></span></figure>
       </div>
+      <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
     <article class="container prose">
@@ -94,16 +116,6 @@
         <li><strong>Standalone</strong>No phone, no internet.</li>
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          <figure class="bezel"><img loading="lazy" src="/assets/games/safecracker/screenshot-1.png" alt="Safecracker wall safe — ten numbers on the dial" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/safecracker/screenshot-2.png" alt="Vault safe with finer ticks and four-digit combo" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/safecracker/screenshot-3.png" alt="Locked digit indicator showing direction flip" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/safecracker/screenshot-4.png" alt="Heist complete after all five safes cracked" width="220" height="220"></figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -113,5 +125,19 @@
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+
+  <div class="sticky-cta" id="sticky-cta">
+    <span class="sticky-name">Safecracker</span>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.safecracker" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </div>
+  <script>
+  (function () {
+    var bar = document.getElementById('sticky-cta'), hero = document.querySelector('.game-hero .cta-row');
+    if (!bar || !hero || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (es) {
+      bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
+    }).observe(hero);
+  })();
+  </script>
 </body>
 </html>

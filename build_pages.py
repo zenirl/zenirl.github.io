@@ -10,6 +10,7 @@ Games render under /games/, apps (kind="app") under /apps/.
 """
 
 from __future__ import annotations
+import html
 import os
 import textwrap
 from dataclasses import dataclass, field
@@ -17,6 +18,28 @@ from typing import Optional
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_URL = "https://zenirl.github.io"
+
+
+def _lum(hex_color: str) -> float:
+    h = hex_color.lstrip("#")
+    ch = []
+    for i in (0, 2, 4):
+        c = int(h[i:i + 2], 16) / 255
+        ch.append(c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4)
+    return 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2]
+
+
+def _contrast(a: str, b: str) -> float:
+    la, lb = sorted((_lum(a), _lum(b)), reverse=True)
+    return (la + 0.05) / (lb + 0.05)
+
+
+def readable_text(bg: str, preferred: str) -> str:
+    """Keep the configured button text colour if it meets WCAG AA (4.5:1), otherwise pick dark/light."""
+    if _contrast(bg, preferred) >= 4.5:
+        return preferred
+    dark, light = "#161616", "#F5F2E8"
+    return dark if _contrast(bg, dark) >= _contrast(bg, light) else light
 
 @dataclass
 class Game:
@@ -36,6 +59,8 @@ class Game:
     paragraphs: list[str] = field(default_factory=list)
     features: list[tuple[str, str]] = field(default_factory=list)  # (label, detail)
     screenshot_alts: list[str] = field(default_factory=list)
+    hero_shot: int = 1       # which screenshot (1-based) leads the page + home showcase
+    title_name: str = ""     # name used in <title>/og/JSON-LD when it differs from the short display name (Play title)
 
 
 GAMES: list[Game] = [
@@ -487,15 +512,17 @@ GAMES: list[Game] = [
             ("Standalone", "Offline. Best score saved on the watch. Mute button on the title screen."),
         ],
         screenshot_alts=[
-            "Crown Ace gameplay screenshot 1",
-            "Crown Ace gameplay screenshot 2",
-            "Crown Ace gameplay screenshot 3",
-            "Crown Ace gameplay screenshot 4",
+            "Crown Ace title card over a ringed planet, with the best score and a nova-bomb hint",
+            "Sector 5: the jet fires up the screen at a rock and a cratered moon",
+            "Dreadnought boss: a wide armoured ship with turrets, an orange blast and a bullet stream",
+            "Star Lance boss: a glowing blue core ship above the player's jet in a green nebula",
         ],
+        hero_shot=3,
     ),
     Game(
         slug="rewind",
         name="Rewind",
+        title_name="Rewind: Crown Time Courier",
         package=None,
         category="Puzzle",
         schema_category="GameApplication",
@@ -520,11 +547,12 @@ GAMES: list[Game] = [
             ("Standalone", "Offline. Sound effects with a mute button on the title screen."),
         ],
         screenshot_alts=[
-            "Rewind gameplay screenshot 1",
-            "Rewind gameplay screenshot 2",
-            "Rewind gameplay screenshot 3",
-            "Rewind gameplay screenshot 4",
+            "Rewind title card: the crown is time, with 77 of 90 stars and a tap-to-begin prompt",
+            "Level 1.2: a glowing red blade sweeps around a hub, with the rewind charge bar and the hourglasses above",
+            "Boss level 12, Clockmaster: moons circle between a spinning blade and the edge of the screen",
+            "Chapter select: the Timekeeper boss level inside a ring of coloured level dots",
         ],
+        hero_shot=2,
     ),
     Game(
         slug="beacon",
@@ -553,11 +581,12 @@ GAMES: list[Game] = [
             ("Standalone", "Offline. Sound and music with a mute button on the title screen."),
         ],
         screenshot_alts=[
-            "Beacon gameplay screenshot 1",
-            "Beacon gameplay screenshot 2",
-            "Beacon gameplay screenshot 3",
-            "Beacon gameplay screenshot 4",
+            "Beacon title card: Night 18, Leviathan, a boss level with 51 of 72 stars",
+            "A lighthouse in the centre throws a pale beam across dark water towards a ship",
+            "Two ships on the water, one inside a pink targeting ring as the beam swings towards it",
+            "A segmented green sea creature crosses the top of the screen in a red-tinted night",
         ],
+        hero_shot=3,
     ),
     Game(
         slug="orbital",
@@ -586,11 +615,12 @@ GAMES: list[Game] = [
             ("Standalone", "Offline. Sound effects with a mute button on the title screen."),
         ],
         screenshot_alts=[
-            "Orbital gameplay screenshot 1",
-            "Orbital gameplay screenshot 2",
-            "Orbital gameplay screenshot 3",
-            "Orbital gameplay screenshot 4",
+            "Orbital title card: Furnace sector, systems 13 to 18, star count and a tap-to-launch prompt",
+            "Level 19, Undertow: a comet with a white tail leaves a planet orbit, with black holes and star targets around it",
+            "Sector 4, The Abyss: a banner explains that portals fling you across space",
+            "Sector 3, The Furnace: a banner explains that exits open and shut, over a red sun",
         ],
+        hero_shot=2,
     ),
     Game(
         slug="echo",
@@ -621,11 +651,12 @@ GAMES: list[Game] = [
             ("Standalone", "Offline. All sound is synthesised on the watch, with a mute button."),
         ],
         screenshot_alts=[
-            "Echo gameplay screenshot 1",
-            "Echo gameplay screenshot 2",
-            "Echo gameplay screenshot 3",
-            "Echo gameplay screenshot 4",
+            "Echo title card: dive 12, Leviathan, midnight zone at 4870 metres, a boss dive",
+            "A yellow submarine at 5182 metres sees sonar-drawn cave walls in blue and a pink anglerfish",
+            "The same dive at 5163 metres with the anglerfish closer, 10 pings used and a relic marker",
+            "A deeper dive at 10,295 metres with a red-tinted screen and an anglerfish beside the sub",
         ],
+        hero_shot=2,
     ),
     Game(
         slug="firefly",
@@ -654,11 +685,12 @@ GAMES: list[Game] = [
             ("Standalone", "Offline. Sound and music with a mute button on the title screen."),
         ],
         screenshot_alts=[
-            "Firefly gameplay screenshot 1",
-            "Firefly gameplay screenshot 2",
-            "Firefly gameplay screenshot 3",
-            "Firefly gameplay screenshot 4",
+            "Firefly title card: Summer Meadow, night 6 of 24, The Bullfrog, with a moon over the field",
+            "A lantern glowing yellow in a meadow with three empty jars, a spider web and fireflies trailing it",
+            "Night pond: a frog sits on a lily pad under a full moon while the lantern leads the swarm",
+            "A dark forest night with two glowing swarms of fireflies, a jar at the bottom and 18 spare",
         ],
+        hero_shot=3,
     ),
 ]
 
@@ -728,6 +760,11 @@ APPS: list[Game] = [
 ]
 
 
+def clip_exists(g: Game) -> bool:
+    base = "apps" if g.kind == "app" else "games"
+    return os.path.exists(os.path.join(ROOT, "assets", base, g.slug, "clip.mp4"))
+
+
 def render_game(g: Game) -> str:
     base = "apps" if g.kind == "app" else "games"          # URL + asset namespace
     nav_href, nav_label = ("/#apps", "Apps") if g.kind == "app" else ("/#available", "Games")
@@ -736,7 +773,17 @@ def render_game(g: Game) -> str:
     canonical = f"{BASE_URL}/{base}/{g.slug}/"
     icon_url = f"{BASE_URL}/assets/{base}/{g.slug}/icon.png"
     feature_url = f"{BASE_URL}/assets/{base}/{g.slug}/feature.png"
-    title = f"{g.name} — {g.category} for Wear OS · ZenIRL"
+    full_name = g.title_name or g.name
+    title = f"{full_name} — {g.category} for Wear OS · ZenIRL"
+    asset = f"/assets/{base}/{g.slug}"
+    n_shots = len(g.screenshot_alts)
+    hero_i = min(max(g.hero_shot, 1), n_shots)
+    hero_alt = html.escape(g.screenshot_alts[hero_i - 1], quote=True)
+    accent_text = readable_text(g.accent, g.accent_text)
+    accent_hover_text = readable_text(g.accent_hover, accent_text)
+    if accent_hover_text != accent_text:      # hover colour must stay legible too
+        accent_text = accent_hover_text
+    has_clip = clip_exists(g)
 
     # JSON-LD MobileApplication. Conditionally include offers for published apps.
     schema_offers = ""
@@ -750,7 +797,7 @@ def render_game(g: Game) -> str:
     {{
       "@context": "https://schema.org",
       "@type": "MobileApplication",
-      "name": "{g.name}",
+      "name": "{full_name}",
       "description": "{g.short_desc}",
       "operatingSystem": "Wear OS 3+",
       "applicationCategory": "{g.schema_category}",
@@ -765,7 +812,7 @@ def render_game(g: Game) -> str:
     }}''').strip()
 
     cta_block = (
-        f'<a class="btn" href="{play_url}" rel="noopener" target="_blank">Get on Google Play</a>'
+        f'<a class="btn" href="{play_url}" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>'
         if play_url
         else '<span class="btn btn-coming">Coming soon</span>'
     )
@@ -773,17 +820,67 @@ def render_game(g: Game) -> str:
         cta_block += f'\n        <a class="btn btn-secondary" href="{g.privacy_url}">Privacy policy</a>'
 
     tag_pills = "\n          ".join(f'<span class="tag">{t}</span>' for t in g.tags)
-
     paragraphs = "\n      ".join(f"<p>{p}</p>" for p in g.paragraphs)
-
     feature_items = "\n        ".join(
         f"<li><strong>{label}</strong>{detail}</li>" for label, detail in g.features
     )
 
     screenshots = "\n          ".join(
-        f'<figure class="bezel"><img loading="lazy" src="/assets/{base}/{g.slug}/screenshot-{i+1}.png" alt="{alt}" width="220" height="220"></figure>'
+        f'<figure class="bezel"><img loading="lazy" decoding="async" src="{asset}/screenshot-{i+1}.webp" alt="{html.escape(alt, quote=True)}" width="480" height="480"><span class="sheen"></span></figure>'
         for i, alt in enumerate(g.screenshot_alts)
     )
+
+    clip_block = ""
+    clip_script = ""
+    if has_clip:
+        clip_block = f'''
+    <section class="container clip" aria-labelledby="clip-h">
+      <h2 class="section-heading" id="clip-h">In motion</h2>
+      <figure class="bezel">
+        <video muted loop playsinline preload="none" width="480" height="480" poster="{asset}/screenshot-1.webp" aria-label="{g.name} gameplay clip, no sound" data-clip>
+          <source src="{asset}/clip.mp4" type="video/mp4">
+        </video><span class="sheen"></span>
+      </figure>
+      <p>Silent gameplay clip. Plays while on screen.</p>
+    </section>'''
+        clip_script = """
+  <script>
+  (function () {
+    var v = document.querySelector('video[data-clip]');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.controls = true; return; }
+    if (!('IntersectionObserver' in window)) { v.controls = true; return; }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function (err) { if (err && err.name === 'NotAllowedError') v.controls = true; }); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
+  })();
+  </script>"""
+
+    sticky = ""
+    sticky_script = ""
+    body_cls = ""
+    if play_url:
+        body_cls = ' class="has-sticky"'
+        sticky = f'''
+  <div class="sticky-cta" id="sticky-cta">
+    <span class="sticky-name">{g.name}</span>
+    <a class="btn" href="{play_url}" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </div>'''
+        sticky_script = """
+  <script>
+  (function () {
+    var bar = document.getElementById('sticky-cta'), hero = document.querySelector('.game-hero .cta-row');
+    if (!bar || !hero || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (es) {
+      bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
+    }).observe(hero);
+  })();
+  </script>"""
+
+    gallery_hint = '<p class="gallery-hint" aria-hidden="true">Swipe for more</p>' if n_shots > 1 else ""
 
     return textwrap.dedent(f'''\
 <!DOCTYPE html>
@@ -794,8 +891,10 @@ def render_game(g: Game) -> str:
   <title>{title}</title>
   <meta name="description" content="{g.short_desc}">
   <link rel="canonical" href="{canonical}">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="{asset}/screenshot-{hero_i}.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="{title}">
@@ -815,11 +914,11 @@ def render_game(g: Game) -> str:
     :root {{
       --game-accent: {g.accent};
       --game-accent-hover: {g.accent_hover};
-      --game-accent-text: {g.accent_text};
+      --game-accent-text: {accent_text};
     }}
   </style>
 </head>
-<body>
+<body{body_cls}>
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="site-header">
@@ -827,25 +926,42 @@ def render_game(g: Game) -> str:
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="{nav_href}">{nav_label}</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/{base}/{g.slug}/icon.png" alt="{g.name} app icon" width="160" height="160">
-      <div>
-        <h1>{g.name}</h1>
-        <p class="tagline">{g.tagline}</p>
-        <div class="tag-row">
-          {tag_pills}
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="{asset}/icon.png" alt="{g.name} app icon" width="84" height="84">
+            <h1>{g.name}</h1>
+          </div>
+          <p class="tagline">{g.tagline}</p>
+          <div class="tag-row">
+            {tag_pills}
+          </div>
+          <div class="cta-row">
+          {cta_block}
+          </div>
         </div>
-        <div class="cta-row">
-        {cta_block}
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="{asset}/screenshot-{hero_i}.webp" alt="{hero_alt}" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="{g.name} screenshots, scrollable" tabindex="0">
+          {screenshots}
+      </div>
+      {gallery_hint}
+    </section>
+{clip_block}
     <article class="container prose">
       {paragraphs}
 
@@ -854,13 +970,6 @@ def render_game(g: Game) -> str:
         {feature_items}
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          {screenshots}
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -870,9 +979,26 @@ def render_game(g: Game) -> str:
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+{sticky}{sticky_script}{clip_script}
 </body>
 </html>
 ''')
+
+
+def write_sitemap() -> None:
+    rows = [f"""  <url>
+    <loc>{BASE_URL}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>"""]
+    for g in GAMES + APPS:
+        base = "apps" if g.kind == "app" else "games"
+        prio = "0.8" if g.package else "0.5"
+        rows.append(f"  <url><loc>{BASE_URL}/{base}/{g.slug}/</loc><changefreq>monthly</changefreq><priority>{prio}</priority></url>")
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(rows) + "\n</urlset>\n"
+    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write(xml)
+    print(f"wrote sitemap.xml ({len(GAMES) + len(APPS) + 1} urls)")
 
 
 def main() -> None:
@@ -884,6 +1010,7 @@ def main() -> None:
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(render_game(g))
         print(f"wrote {out_path}")
+    write_sitemap()
 
 
 if __name__ == "__main__":

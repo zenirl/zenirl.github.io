@@ -6,8 +6,10 @@
   <title>Beacon — Puzzle for Wear OS · ZenIRL</title>
   <meta name="description" content="Lighthouse puzzle for Wear OS. Swing the beam with the crown and guide ships safely to the quay. 24 nights, four seas. Free and offline.">
   <link rel="canonical" href="https://zenirl.github.io/games/beacon/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/games/beacon/screenshot-3.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Beacon — Puzzle for Wear OS · ZenIRL">
@@ -54,26 +56,46 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#available">Games</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/games/beacon/icon.png" alt="Beacon app icon" width="160" height="160">
-      <div>
-        <h1>Beacon</h1>
-        <p class="tagline">Lighthouse puzzle for Wear OS. Swing the beam. Bring every ship home.</p>
-        <div class="tag-row">
-          <span class="tag">Puzzle</span>
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="/assets/games/beacon/icon.png" alt="Beacon app icon" width="84" height="84">
+            <h1>Beacon</h1>
+          </div>
+          <p class="tagline">Lighthouse puzzle for Wear OS. Swing the beam. Bring every ship home.</p>
+          <div class="tag-row">
+            <span class="tag">Puzzle</span>
           <span class="tag">Strategy</span>
           <span class="tag">Casual</span>
-        </div>
-        <div class="cta-row">
-        <span class="btn btn-coming">Coming soon</span>
+          </div>
+          <div class="cta-row">
+          <span class="btn btn-coming">Coming soon</span>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/beacon.html">Privacy policy</a>
+          </div>
         </div>
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="/assets/games/beacon/screenshot-3.webp" alt="Two ships on the water, one inside a pink targeting ring as the beam swings towards it" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="Beacon screenshots, scrollable" tabindex="0">
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/beacon/screenshot-1.webp" alt="Beacon title card: Night 18, Leviathan, a boss level with 51 of 72 stars" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/beacon/screenshot-2.webp" alt="A lighthouse in the centre throws a pale beam across dark water towards a ship" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/beacon/screenshot-3.webp" alt="Two ships on the water, one inside a pink targeting ring as the beam swings towards it" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/beacon/screenshot-4.webp" alt="A segmented green sea creature crosses the top of the screen in a red-tinted night" width="480" height="480"><span class="sheen"></span></figure>
       </div>
+      <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
     <article class="container prose">
@@ -93,16 +115,6 @@
         <li><strong>Standalone</strong>Offline. Sound and music with a mute button on the title screen.</li>
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          <figure class="bezel"><img loading="lazy" src="/assets/games/beacon/screenshot-1.png" alt="Beacon gameplay screenshot 1" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/beacon/screenshot-2.png" alt="Beacon gameplay screenshot 2" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/beacon/screenshot-3.png" alt="Beacon gameplay screenshot 3" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/beacon/screenshot-4.png" alt="Beacon gameplay screenshot 4" width="220" height="220"></figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -112,5 +124,6 @@
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+
 </body>
 </html>

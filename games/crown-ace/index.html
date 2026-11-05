@@ -6,8 +6,10 @@
   <title>Crown Ace — Arcade for Wear OS · ZenIRL</title>
   <meta name="description" content="Vertical space shooter for Wear OS. Turn the crown to fly, weave rocks and laser gates, graze bullets, beat the bosses. Free and offline.">
   <link rel="canonical" href="https://zenirl.github.io/games/crown-ace/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/games/crown-ace/screenshot-3.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Crown Ace — Arcade for Wear OS · ZenIRL">
@@ -54,26 +56,46 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#available">Games</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/games/crown-ace/icon.png" alt="Crown Ace app icon" width="160" height="160">
-      <div>
-        <h1>Crown Ace</h1>
-        <p class="tagline">Space shooter for Wear OS. Turn the crown to fly. Weave rocks and lasers, beat the bosses.</p>
-        <div class="tag-row">
-          <span class="tag">Arcade</span>
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="/assets/games/crown-ace/icon.png" alt="Crown Ace app icon" width="84" height="84">
+            <h1>Crown Ace</h1>
+          </div>
+          <p class="tagline">Space shooter for Wear OS. Turn the crown to fly. Weave rocks and lasers, beat the bosses.</p>
+          <div class="tag-row">
+            <span class="tag">Arcade</span>
           <span class="tag">Action</span>
           <span class="tag">Shooter</span>
-        </div>
-        <div class="cta-row">
-        <span class="btn btn-coming">Coming soon</span>
+          </div>
+          <div class="cta-row">
+          <span class="btn btn-coming">Coming soon</span>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/ace.html">Privacy policy</a>
+          </div>
         </div>
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="/assets/games/crown-ace/screenshot-3.webp" alt="Dreadnought boss: a wide armoured ship with turrets, an orange blast and a bullet stream" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="Crown Ace screenshots, scrollable" tabindex="0">
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-ace/screenshot-1.webp" alt="Crown Ace title card over a ringed planet, with the best score and a nova-bomb hint" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-ace/screenshot-2.webp" alt="Sector 5: the jet fires up the screen at a rock and a cratered moon" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-ace/screenshot-3.webp" alt="Dreadnought boss: a wide armoured ship with turrets, an orange blast and a bullet stream" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-ace/screenshot-4.webp" alt="Star Lance boss: a glowing blue core ship above the player&#x27;s jet in a green nebula" width="480" height="480"><span class="sheen"></span></figure>
       </div>
+      <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
     <article class="container prose">
@@ -94,16 +116,6 @@
         <li><strong>Standalone</strong>Offline. Best score saved on the watch. Mute button on the title screen.</li>
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-ace/screenshot-1.png" alt="Crown Ace gameplay screenshot 1" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-ace/screenshot-2.png" alt="Crown Ace gameplay screenshot 2" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-ace/screenshot-3.png" alt="Crown Ace gameplay screenshot 3" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-ace/screenshot-4.png" alt="Crown Ace gameplay screenshot 4" width="220" height="220"></figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -113,5 +125,6 @@
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+
 </body>
 </html>

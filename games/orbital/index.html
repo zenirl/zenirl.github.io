@@ -6,8 +6,10 @@
   <title>Orbital — Puzzle for Wear OS · ZenIRL</title>
   <meta name="description" content="Slingshot puzzle for Wear OS. Orbit planets, let go at the right moment and fly your comet home. 24 star systems. Free and offline.">
   <link rel="canonical" href="https://zenirl.github.io/games/orbital/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/games/orbital/screenshot-2.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Orbital — Puzzle for Wear OS · ZenIRL">
@@ -42,7 +44,7 @@
     :root {
       --game-accent: #AB47BC;
       --game-accent-hover: #BA68C8;
-      --game-accent-text: #F5F2E8;
+      --game-accent-text: #161616;
     }
   </style>
 </head>
@@ -54,26 +56,46 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#available">Games</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/games/orbital/icon.png" alt="Orbital app icon" width="160" height="160">
-      <div>
-        <h1>Orbital</h1>
-        <p class="tagline">Slingshot puzzle for Wear OS. Orbit, release, fly the comet home.</p>
-        <div class="tag-row">
-          <span class="tag">Puzzle</span>
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="/assets/games/orbital/icon.png" alt="Orbital app icon" width="84" height="84">
+            <h1>Orbital</h1>
+          </div>
+          <p class="tagline">Slingshot puzzle for Wear OS. Orbit, release, fly the comet home.</p>
+          <div class="tag-row">
+            <span class="tag">Puzzle</span>
           <span class="tag">Arcade</span>
           <span class="tag">Space</span>
-        </div>
-        <div class="cta-row">
-        <span class="btn btn-coming">Coming soon</span>
+          </div>
+          <div class="cta-row">
+          <span class="btn btn-coming">Coming soon</span>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/orbital.html">Privacy policy</a>
+          </div>
         </div>
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="/assets/games/orbital/screenshot-2.webp" alt="Level 19, Undertow: a comet with a white tail leaves a planet orbit, with black holes and star targets around it" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="Orbital screenshots, scrollable" tabindex="0">
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/orbital/screenshot-1.webp" alt="Orbital title card: Furnace sector, systems 13 to 18, star count and a tap-to-launch prompt" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/orbital/screenshot-2.webp" alt="Level 19, Undertow: a comet with a white tail leaves a planet orbit, with black holes and star targets around it" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/orbital/screenshot-3.webp" alt="Sector 4, The Abyss: a banner explains that portals fling you across space" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/orbital/screenshot-4.webp" alt="Sector 3, The Furnace: a banner explains that exits open and shut, over a red sun" width="480" height="480"><span class="sheen"></span></figure>
       </div>
+      <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
     <article class="container prose">
@@ -93,16 +115,6 @@
         <li><strong>Standalone</strong>Offline. Sound effects with a mute button on the title screen.</li>
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          <figure class="bezel"><img loading="lazy" src="/assets/games/orbital/screenshot-1.png" alt="Orbital gameplay screenshot 1" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/orbital/screenshot-2.png" alt="Orbital gameplay screenshot 2" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/orbital/screenshot-3.png" alt="Orbital gameplay screenshot 3" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/orbital/screenshot-4.png" alt="Orbital gameplay screenshot 4" width="220" height="220"></figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -112,5 +124,6 @@
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+
 </body>
 </html>

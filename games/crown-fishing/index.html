@@ -6,8 +6,10 @@
   <title>Crown Fishing — Casual for Wear OS · ZenIRL</title>
   <meta name="description" content="Fishing game for Wear OS. Tap to cast, feel the bite, then spin the crown to reel — ease off when the line strains or it snaps.">
   <link rel="canonical" href="https://zenirl.github.io/games/crown-fishing/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/games/crown-fishing/screenshot-1.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Crown Fishing — Casual for Wear OS · ZenIRL">
@@ -54,26 +56,45 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#available">Games</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/games/crown-fishing/icon.png" alt="Crown Fishing app icon" width="160" height="160">
-      <div>
-        <h1>Crown Fishing</h1>
-        <p class="tagline">Fishing for Wear OS. The crown is your reel. Feel the bite.</p>
-        <div class="tag-row">
-          <span class="tag">Casual</span>
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="/assets/games/crown-fishing/icon.png" alt="Crown Fishing app icon" width="84" height="84">
+            <h1>Crown Fishing</h1>
+          </div>
+          <p class="tagline">Fishing for Wear OS. The crown is your reel. Feel the bite.</p>
+          <div class="tag-row">
+            <span class="tag">Casual</span>
           <span class="tag">Simulation</span>
           <span class="tag">Crown</span>
-        </div>
-        <div class="cta-row">
-        <span class="btn btn-coming">Coming soon</span>
+          </div>
+          <div class="cta-row">
+          <span class="btn btn-coming">Coming soon</span>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/reel.html">Privacy policy</a>
+          </div>
         </div>
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="/assets/games/crown-fishing/screenshot-1.webp" alt="Crown Fishing — line cast over the water, waiting for a bite" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="Crown Fishing screenshots, scrollable" tabindex="0">
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-fishing/screenshot-1.webp" alt="Crown Fishing — line cast over the water, waiting for a bite" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-fishing/screenshot-2.webp" alt="Title screen with the water scene" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-fishing/screenshot-3.webp" alt="How to play — tap to cast, spin the crown to reel" width="480" height="480"><span class="sheen"></span></figure>
       </div>
+      <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
     <article class="container prose">
@@ -89,15 +110,6 @@
         <li><strong>Standalone</strong>No phone, no internet permission.</li>
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-fishing/screenshot-1.png" alt="Crown Fishing — line cast over the water, waiting for a bite" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-fishing/screenshot-2.png" alt="Title screen with the water scene" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-fishing/screenshot-3.png" alt="How to play — tap to cast, spin the crown to reel" width="220" height="220"></figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -107,5 +119,6 @@
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+
 </body>
 </html>

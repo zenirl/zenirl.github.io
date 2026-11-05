@@ -6,8 +6,10 @@
   <title>Crown Pinball — Arcade for Wear OS · ZenIRL</title>
   <meta name="description" content="Pinball for Wear OS. The crown is the paddle. Real ball physics, coloured bumpers, multipliers up to x8. Standalone, offline, ad-free.">
   <link rel="canonical" href="https://zenirl.github.io/games/crown-pinball/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/games/crown-pinball/screenshot-1.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Crown Pinball — Arcade for Wear OS · ZenIRL">
@@ -45,11 +47,11 @@
     :root {
       --game-accent: #FF7043;
       --game-accent-hover: #FF8A65;
-      --game-accent-text: #F5F2E8;
+      --game-accent-text: #161616;
     }
   </style>
 </head>
-<body>
+<body class="has-sticky">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="site-header">
@@ -57,26 +59,46 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#available">Games</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/games/crown-pinball/icon.png" alt="Crown Pinball app icon" width="160" height="160">
-      <div>
-        <h1>Crown Pinball</h1>
-        <p class="tagline">Pinball for your watch. Crown is the paddle. Wear OS arcade, no phone needed.</p>
-        <div class="tag-row">
-          <span class="tag">Arcade</span>
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="/assets/games/crown-pinball/icon.png" alt="Crown Pinball app icon" width="84" height="84">
+            <h1>Crown Pinball</h1>
+          </div>
+          <p class="tagline">Pinball for your watch. Crown is the paddle. Wear OS arcade, no phone needed.</p>
+          <div class="tag-row">
+            <span class="tag">Arcade</span>
           <span class="tag">Crown</span>
           <span class="tag">Physics</span>
-        </div>
-        <div class="cta-row">
-        <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.pinball" rel="noopener" target="_blank">Get on Google Play</a>
+          </div>
+          <div class="cta-row">
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.pinball" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/pinball.html">Privacy policy</a>
+          </div>
         </div>
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="/assets/games/crown-pinball/screenshot-1.webp" alt="Crown Pinball table with paddle on the bottom arc and ball in flight" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="Crown Pinball screenshots, scrollable" tabindex="0">
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-pinball/screenshot-1.webp" alt="Crown Pinball table with paddle on the bottom arc and ball in flight" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-pinball/screenshot-2.webp" alt="Multiplier climbing after consecutive bumper hits" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-pinball/screenshot-3.webp" alt="Wide-paddle bonus active after a five-chain" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/crown-pinball/screenshot-4.webp" alt="Score-chase summary at end of round" width="480" height="480"><span class="sheen"></span></figure>
       </div>
+      <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
     <article class="container prose">
@@ -94,16 +116,6 @@
         <li><strong>Standalone</strong>No phone, no internet permission.</li>
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-pinball/screenshot-1.png" alt="Crown Pinball table with paddle on the bottom arc and ball in flight" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-pinball/screenshot-2.png" alt="Multiplier climbing after consecutive bumper hits" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-pinball/screenshot-3.png" alt="Wide-paddle bonus active after a five-chain" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/crown-pinball/screenshot-4.png" alt="Score-chase summary at end of round" width="220" height="220"></figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -113,5 +125,19 @@
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+
+  <div class="sticky-cta" id="sticky-cta">
+    <span class="sticky-name">Crown Pinball</span>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.pinball" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </div>
+  <script>
+  (function () {
+    var bar = document.getElementById('sticky-cta'), hero = document.querySelector('.game-hero .cta-row');
+    if (!bar || !hero || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (es) {
+      bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
+    }).observe(hero);
+  })();
+  </script>
 </body>
 </html>

@@ -6,8 +6,10 @@
   <title>Firefly — Casual for Wear OS · ZenIRL</title>
   <meta name="description" content="Night-time herding game for Wear OS. Walk a lantern and lead a swarm of fireflies into their jars. 24 nights, four scenes. Free and offline.">
   <link rel="canonical" href="https://zenirl.github.io/games/firefly/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/games/firefly/screenshot-3.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Firefly — Casual for Wear OS · ZenIRL">
@@ -54,26 +56,46 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#available">Games</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/games/firefly/icon.png" alt="Firefly app icon" width="160" height="160">
-      <div>
-        <h1>Firefly</h1>
-        <p class="tagline">Herding game for Wear OS. Carry the lantern. Lead the fireflies to their jars.</p>
-        <div class="tag-row">
-          <span class="tag">Casual</span>
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="/assets/games/firefly/icon.png" alt="Firefly app icon" width="84" height="84">
+            <h1>Firefly</h1>
+          </div>
+          <p class="tagline">Herding game for Wear OS. Carry the lantern. Lead the fireflies to their jars.</p>
+          <div class="tag-row">
+            <span class="tag">Casual</span>
           <span class="tag">Puzzle</span>
           <span class="tag">Relaxing</span>
-        </div>
-        <div class="cta-row">
-        <span class="btn btn-coming">Coming soon</span>
+          </div>
+          <div class="cta-row">
+          <span class="btn btn-coming">Coming soon</span>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/firefly.html">Privacy policy</a>
+          </div>
         </div>
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="/assets/games/firefly/screenshot-3.webp" alt="Night pond: a frog sits on a lily pad under a full moon while the lantern leads the swarm" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="Firefly screenshots, scrollable" tabindex="0">
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/firefly/screenshot-1.webp" alt="Firefly title card: Summer Meadow, night 6 of 24, The Bullfrog, with a moon over the field" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/firefly/screenshot-2.webp" alt="A lantern glowing yellow in a meadow with three empty jars, a spider web and fireflies trailing it" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/firefly/screenshot-3.webp" alt="Night pond: a frog sits on a lily pad under a full moon while the lantern leads the swarm" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/firefly/screenshot-4.webp" alt="A dark forest night with two glowing swarms of fireflies, a jar at the bottom and 18 spare" width="480" height="480"><span class="sheen"></span></figure>
       </div>
+      <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
     <article class="container prose">
@@ -93,16 +115,6 @@
         <li><strong>Standalone</strong>Offline. Sound and music with a mute button on the title screen.</li>
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          <figure class="bezel"><img loading="lazy" src="/assets/games/firefly/screenshot-1.png" alt="Firefly gameplay screenshot 1" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/firefly/screenshot-2.png" alt="Firefly gameplay screenshot 2" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/firefly/screenshot-3.png" alt="Firefly gameplay screenshot 3" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/firefly/screenshot-4.png" alt="Firefly gameplay screenshot 4" width="220" height="220"></figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -112,5 +124,6 @@
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+
 </body>
 </html>

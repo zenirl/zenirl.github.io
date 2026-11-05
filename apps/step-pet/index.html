@@ -6,8 +6,10 @@
   <title>Step Pet — Health & Fitness for Wear OS · ZenIRL</title>
   <meta name="description" content="Walk to raise a tiny pet on your watch — a step counter that's actually fun. Your steps grow it, dress it, and send it on adventures. Offline, ad-free.">
   <link rel="canonical" href="https://zenirl.github.io/apps/step-pet/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/apps/step-pet/screenshot-1.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Step Pet — Health & Fitness for Wear OS · ZenIRL">
@@ -49,7 +51,7 @@
     }
   </style>
 </head>
-<body>
+<body class="has-sticky">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="site-header">
@@ -57,26 +59,46 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#apps">Apps</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/apps/step-pet/icon.png" alt="Step Pet app icon" width="160" height="160">
-      <div>
-        <h1>Step Pet</h1>
-        <p class="tagline">Walk to raise a tiny pet on your wrist. A step counter that's actually fun.</p>
-        <div class="tag-row">
-          <span class="tag">Health & Fitness</span>
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="/assets/apps/step-pet/icon.png" alt="Step Pet app icon" width="84" height="84">
+            <h1>Step Pet</h1>
+          </div>
+          <p class="tagline">Walk to raise a tiny pet on your wrist. A step counter that's actually fun.</p>
+          <div class="tag-row">
+            <span class="tag">Health & Fitness</span>
           <span class="tag">Steps</span>
           <span class="tag">Virtual pet</span>
-        </div>
-        <div class="cta-row">
-        <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.stepapp" rel="noopener" target="_blank">Get on Google Play</a>
+          </div>
+          <div class="cta-row">
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.stepapp" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/steppet.html">Privacy policy</a>
+          </div>
         </div>
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="/assets/apps/step-pet/screenshot-1.webp" alt="Step Pet home — your pet with today’s steps and progress to goal" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="Step Pet screenshots, scrollable" tabindex="0">
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/apps/step-pet/screenshot-1.webp" alt="Step Pet home — your pet with today’s steps and progress to goal" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/apps/step-pet/screenshot-2.webp" alt="The shop — cosmetics you can buy with earned coins" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/apps/step-pet/screenshot-3.webp" alt="An adventure result with a short story and treasure" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/apps/step-pet/screenshot-4.webp" alt="The species family — six pets to raise" width="480" height="480"><span class="sheen"></span></figure>
       </div>
+      <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
     <article class="container prose">
@@ -94,16 +116,6 @@
         <li><strong>Private & offline</strong>No internet permission, no accounts, no ads, no tracking.</li>
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          <figure class="bezel"><img loading="lazy" src="/assets/apps/step-pet/screenshot-1.png" alt="Step Pet home — your pet with today’s steps and progress to goal" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/apps/step-pet/screenshot-2.png" alt="The shop — cosmetics you can buy with earned coins" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/apps/step-pet/screenshot-3.png" alt="An adventure result with a short story and treasure" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/apps/step-pet/screenshot-4.png" alt="The species family — six pets to raise" width="220" height="220"></figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -113,5 +125,19 @@
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+
+  <div class="sticky-cta" id="sticky-cta">
+    <span class="sticky-name">Step Pet</span>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.stepapp" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </div>
+  <script>
+  (function () {
+    var bar = document.getElementById('sticky-cta'), hero = document.querySelector('.game-hero .cta-row');
+    if (!bar || !hero || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (es) {
+      bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
+    }).observe(hero);
+  })();
+  </script>
 </body>
 </html>

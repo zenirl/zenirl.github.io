@@ -5,20 +5,26 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url><loc>https://zenirl.github.io/games/asteroid-field/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zenirl.github.io/games/haptic-beat/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zenirl.github.io/games/sphere-defense/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zenirl.github.io/games/crown-snake/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zenirl.github.io/games/spell-caster/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zenirl.github.io/games/crown-lockpick/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zenirl.github.io/games/morse-tap/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zenirl.github.io/games/crown-pinball/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zenirl.github.io/games/safecracker/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zenirl.github.io/apps/step-pet/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zenirl.github.io/games/asteroid-field/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/haptic-beat/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/sphere-defense/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/crown-snake/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/spell-caster/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/crown-lockpick/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/morse-tap/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/crown-pinball/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/safecracker/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/brick-breaker/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://zenirl.github.io/games/crown-darts/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/helix-drop/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/games/crown-fishing/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://zenirl.github.io/games/memory-buzz/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://zenirl.github.io/games/crown-ace/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://zenirl.github.io/games/rewind/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://zenirl.github.io/games/beacon/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://zenirl.github.io/games/orbital/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://zenirl.github.io/games/echo/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://zenirl.github.io/games/firefly/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://zenirl.github.io/apps/step-pet/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zenirl.github.io/apps/bubble-level/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rewind — Puzzle for Wear OS · ZenIRL</title>
+  <title>Rewind: Crown Time Courier — Puzzle for Wear OS · ZenIRL</title>
   <meta name="description" content="Puzzle platformer for Wear OS. Turn the crown to move time, rewind the traps and reach the exit. 30 levels in five chapters. Free and offline.">
   <link rel="canonical" href="https://zenirl.github.io/games/rewind/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/games/rewind/screenshot-2.webp" type="image/webp" fetchpriority="high">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Rewind — Puzzle for Wear OS · ZenIRL">
+  <meta property="og:title" content="Rewind: Crown Time Courier — Puzzle for Wear OS · ZenIRL">
   <meta property="og:description" content="Puzzle platformer for Wear OS. Turn the crown to move time, rewind the traps and reach the exit. 30 levels in five chapters. Free and offline.">
   <meta property="og:url" content="https://zenirl.github.io/games/rewind/">
   <meta property="og:image" content="https://zenirl.github.io/assets/games/rewind/feature.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rewind — Puzzle for Wear OS · ZenIRL">
+  <meta name="twitter:title" content="Rewind: Crown Time Courier — Puzzle for Wear OS · ZenIRL">
   <meta name="twitter:description" content="Puzzle platformer for Wear OS. Turn the crown to move time, rewind the traps and reach the exit. 30 levels in five chapters. Free and offline.">
   <meta name="twitter:image" content="https://zenirl.github.io/assets/games/rewind/feature.png">
 
@@ -23,7 +25,7 @@
 {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
-  "name": "Rewind",
+  "name": "Rewind: Crown Time Courier",
   "description": "Puzzle platformer for Wear OS. Turn the crown to move time, rewind the traps and reach the exit. 30 levels in five chapters. Free and offline.",
   "operatingSystem": "Wear OS 3+",
   "applicationCategory": "GameApplication",
@@ -54,26 +56,46 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="/#available">Games</a>
+        <a href="/#coming-soon">Coming soon</a>
+        <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="container game-hero">
-      <img class="game-icon" src="/assets/games/rewind/icon.png" alt="Rewind app icon" width="160" height="160">
-      <div>
-        <h1>Rewind</h1>
-        <p class="tagline">Puzzle platformer for Wear OS. The crown is time. Rewind the traps, reach the exit.</p>
-        <div class="tag-row">
-          <span class="tag">Puzzle</span>
+    <div class="game-hero-wrap">
+      <section class="container game-hero">
+        <div>
+          <div class="title-row">
+            <img class="game-icon" src="/assets/games/rewind/icon.png" alt="Rewind app icon" width="84" height="84">
+            <h1>Rewind</h1>
+          </div>
+          <p class="tagline">Puzzle platformer for Wear OS. The crown is time. Rewind the traps, reach the exit.</p>
+          <div class="tag-row">
+            <span class="tag">Puzzle</span>
           <span class="tag">Arcade</span>
           <span class="tag">Casual</span>
-        </div>
-        <div class="cta-row">
-        <span class="btn btn-coming">Coming soon</span>
+          </div>
+          <div class="cta-row">
+          <span class="btn btn-coming">Coming soon</span>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/rewind.html">Privacy policy</a>
+          </div>
         </div>
+        <div class="hero-bezel">
+          <figure class="bezel"><img src="/assets/games/rewind/screenshot-2.webp" alt="Level 1.2: a glowing red blade sweeps around a hub, with the rewind charge bar and the hourglasses above" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="container gallery" aria-labelledby="shots-h">
+      <h2 class="section-heading" id="shots-h">Screenshots</h2>
+      <div class="gallery-row" role="region" aria-label="Rewind screenshots, scrollable" tabindex="0">
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/rewind/screenshot-1.webp" alt="Rewind title card: the crown is time, with 77 of 90 stars and a tap-to-begin prompt" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/rewind/screenshot-2.webp" alt="Level 1.2: a glowing red blade sweeps around a hub, with the rewind charge bar and the hourglasses above" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/rewind/screenshot-3.webp" alt="Boss level 12, Clockmaster: moons circle between a spinning blade and the edge of the screen" width="480" height="480"><span class="sheen"></span></figure>
+          <figure class="bezel"><img loading="lazy" decoding="async" src="/assets/games/rewind/screenshot-4.webp" alt="Chapter select: the Timekeeper boss level inside a ring of coloured level dots" width="480" height="480"><span class="sheen"></span></figure>
       </div>
+      <p class="gallery-hint" aria-hidden="true">Swipe for more</p>
     </section>
 
     <article class="container prose">
@@ -93,16 +115,6 @@
         <li><strong>Standalone</strong>Offline. Sound effects with a mute button on the title screen.</li>
       </ul>
     </article>
-
-    <section class="container gallery">
-      <h2 class="section-heading">Screenshots</h2>
-      <div class="gallery-row">
-          <figure class="bezel"><img loading="lazy" src="/assets/games/rewind/screenshot-1.png" alt="Rewind gameplay screenshot 1" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/rewind/screenshot-2.png" alt="Rewind gameplay screenshot 2" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/rewind/screenshot-3.png" alt="Rewind gameplay screenshot 3" width="220" height="220"></figure>
-          <figure class="bezel"><img loading="lazy" src="/assets/games/rewind/screenshot-4.png" alt="Rewind gameplay screenshot 4" width="220" height="220"></figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -112,5 +124,6 @@
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
+
 </body>
 </html>

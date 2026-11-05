@@ -6,7 +6,9 @@
   <title>ZenIRL — Wear OS games designed for your wrist</title>
   <meta name="description" content="A collection of small, offline, ad-free games and apps built for Wear OS — crown-driven, haptic-first, and tuned to the round screen. By indie studio ZenIRL.">
   <link rel="canonical" href="https://zenirl.github.io/">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="preload" as="image" href="/assets/games/crown-darts/screenshot-1.webp" type="image/webp" fetchpriority="high">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 
   <!-- Open Graph / Twitter -->
@@ -53,7 +55,8 @@
       <div class="brand"><a href="/">ZenIRL</a></div>
       <nav aria-label="Primary">
         <a href="#available">Games</a>
-        <a href="#apps">Apps</a>
+        <a href="#coming-soon">Coming soon</a>
+        <a href="#apps" class="hide-sm">Apps</a>
         <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
@@ -61,53 +64,32 @@
 
   <main id="main">
 
-    <section class="hero-slider" aria-label="Featured games" aria-roledescription="carousel">
-      <div class="hero-track">
-
-        <div class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 2: Crown Snake">
-          <div class="slide-content">
-            <span class="slide-eyebrow">Fan favourite</span>
-            <h2 class="slide-title">Crown Snake</h2>
-            <p class="slide-copy">The arcade classic, reborn on your wrist. Twist the crown, chase the tail, and beat your best — offline, no phone needed.</p>
-            <a class="btn" href="/games/crown-snake/">Play Crown Snake</a>
+    <section class="home-hero" aria-labelledby="hero-h">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">ZenIRL · Wear OS</p>
+          <h1 id="hero-h">Games built for the round screen.</h1>
+          <p class="lede">Crown-driven controls. Haptics you can feel through a sleeve. Small games and apps for your wrist, offline by default.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#available">Play on Wear OS</a>
+            <a class="btn btn-secondary" href="https://x.com/zenIRL_" rel="noopener" target="_blank">Follow @zenIRL_ on X<span class="visually-hidden"> (opens in a new tab)</span></a>
           </div>
-          <div class="slide-art">
-            <div class="bezel"><img src="/assets/games/crown-snake/screenshot-1.png" alt="Crown Snake gameplay on a Wear OS watch" width="480" height="480" loading="lazy"></div>
+          <ul class="values" aria-label="What every game is">
+            <li><strong>Offline.</strong> Works on a plane.</li>
+            <li><strong>No ads.</strong> No IAP.</li>
+            <li><strong>No tracking.</strong> No analytics, no internet.</li>
+            <li><strong>Standalone.</strong> No phone required.</li>
+          </ul>
+        </div>
+        <div class="hero-art">
+          <div class="watch-cluster" id="watch-cluster">
+          <div class="watch watch-1"><figure class="bezel"><img src="/assets/games/crown-darts/screenshot-1.webp" alt="Crown Darts: a dartboard numbered 1 to 20 with a dart landed and the score above it" width="480" height="480" fetchpriority="high" decoding="async"><span class="sheen"></span></figure></div>
+          <div class="watch watch-2"><figure class="bezel"><img src="/assets/games/helix-drop/screenshot-1.webp" alt="Helix Drop: blue spiral rings around a green core, ball at the top" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure></div>
+          <div class="watch watch-3"><figure class="bezel"><img src="/assets/games/haptic-beat/screenshot-2.webp" alt="Haptic Beat: a large purple ring closing on a centre pad mid-round" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure></div>
+          <div class="watch watch-4"><figure class="bezel"><img src="/assets/games/crown-pinball/screenshot-3.webp" alt="Crown Pinball: a ball leaving a cyan paddle toward red and yellow bumpers" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure></div>
+          <div class="watch watch-5"><figure class="bezel"><img src="/assets/games/memory-buzz/screenshot-2.webp" alt="Memory Buzz: four colour quadrants, green, red, blue and amber, with the prompt your turn" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure></div>
           </div>
         </div>
-
-        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 2: Helix Drop">
-          <div class="slide-content">
-            <span class="slide-eyebrow">Fresh drop · now live</span>
-            <h2 class="slide-title">Helix Drop</h2>
-            <p class="slide-copy">Spin the crown to thread the falling ball through every gap. Fast, hypnotic, and brand-new on Wear OS.</p>
-            <a class="btn" href="/games/helix-drop/">Play Helix Drop</a>
-          </div>
-          <div class="slide-art">
-            <div class="bezel"><img src="/assets/games/helix-drop/screenshot-1.png" alt="Helix Drop gameplay on a Wear OS watch" width="480" height="480" loading="lazy"></div>
-          </div>
-        </div>
-
-        <button class="hero-nav hero-prev" type="button" aria-label="Previous slide">&#8249;</button>
-        <button class="hero-nav hero-next" type="button" aria-label="Next slide">&#8250;</button>
-        <div class="hero-dots" role="tablist" aria-label="Choose slide">
-          <button type="button" aria-current="true" aria-label="Crown Snake"></button>
-          <button type="button" aria-current="false" aria-label="Helix Drop"></button>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="container hero">
-      <h1>ZenIRL</h1>
-      <p class="lede">A small studio making games and apps for your wrist.</p>
-      <p class="lede">Crown-driven controls. Haptic feedback you can feel through a sleeve. Built for the round screen, offline by default, with no ads, no internet permission and no analytics.</p>
-      <div class="values" aria-label="What every game is">
-        <span class="pill"><strong>Offline.</strong> Works on a plane.</span>
-        <span class="pill"><strong>No ads.</strong> No IAP.</span>
-        <span class="pill"><strong>No tracking.</strong> No analytics, no internet.</span>
-        <span class="pill"><strong>Standalone.</strong> No phone required.</span>
-        <span class="pill"><strong>Round-screen first.</strong> Designed for the bezel.</span>
       </div>
     </section>
 
@@ -116,7 +98,10 @@
       <div class="grid">
 
         <a class="card" href="/games/asteroid-field/" aria-label="Asteroid Field — open game page">
-          <img class="card-icon" src="/assets/games/asteroid-field/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/asteroid-field/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/asteroid-field/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Asteroid Field</div>
           <p class="card-tagline">Asteroid arcade for Wear OS. Crown to aim. Tap to fire. Survive.</p>
           <div class="card-tags">
@@ -126,9 +111,12 @@
         </a>
 
         <a class="card" href="/games/haptic-beat/" aria-label="Haptic Beat — open game page">
-          <img class="card-icon" src="/assets/games/haptic-beat/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/haptic-beat/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/haptic-beat/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Haptic Beat</div>
-          <p class="card-tagline">Rhythm game played by feel. The watch buzzes the beat. You tap it back.</p>
+          <p class="card-tagline">Haptic rhythm game for Wear OS. Feel each beat on your wrist. No sound needed.</p>
           <div class="card-tags">
             <span class="tag">Rhythm</span>
             <span class="tag">Haptic</span>
@@ -136,9 +124,12 @@
         </a>
 
         <a class="card" href="/games/sphere-defense/" aria-label="Sphere Defense — open game page">
-          <img class="card-icon" src="/assets/games/sphere-defense/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/sphere-defense/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/sphere-defense/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Sphere Defense</div>
-          <p class="card-tagline">Tower defense for Wear OS. Crown rotates your shield. Tap to shoot.</p>
+          <p class="card-tagline">Tower defense for Wear OS. Crown rotates your shield. Tap to shoot. Survive.</p>
           <div class="card-tags">
             <span class="tag">Action</span>
             <span class="tag">Crown</span>
@@ -146,9 +137,12 @@
         </a>
 
         <a class="card" href="/games/crown-snake/" aria-label="Crown Snake — open game page">
-          <img class="card-icon" src="/assets/games/crown-snake/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/crown-snake/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/crown-snake/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Crown Snake</div>
-          <p class="card-tagline">Classic snake on your wrist. Twist the crown to steer through a round arena.</p>
+          <p class="card-tagline">Snake on your wrist. Twist the crown to steer. A classic for Wear OS.</p>
           <div class="card-tags">
             <span class="tag">Arcade</span>
             <span class="tag">Crown</span>
@@ -156,9 +150,12 @@
         </a>
 
         <a class="card" href="/games/spell-caster/" aria-label="Spell Caster — open game page">
-          <img class="card-icon" src="/assets/games/spell-caster/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/spell-caster/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/spell-caster/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Spell Caster</div>
-          <p class="card-tagline">Trace glyphs to cast spells. Defend the core from creatures drifting in.</p>
+          <p class="card-tagline">Glyph-tracing spell game for Wear OS. Draw symbols. Defend the core.</p>
           <div class="card-tags">
             <span class="tag">Action</span>
             <span class="tag">Touch</span>
@@ -166,9 +163,12 @@
         </a>
 
         <a class="card" href="/games/crown-lockpick/" aria-label="Crown Lockpick — open game page">
-          <img class="card-icon" src="/assets/games/crown-lockpick/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/crown-lockpick/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/crown-lockpick/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Crown Lockpick</div>
-          <p class="card-tagline">Lockpicking heist played by haptic feel. Five locks, one vault.</p>
+          <p class="card-tagline">Lockpicking heist for Wear OS. Pick five locks by haptic feel. No looking.</p>
           <div class="card-tags">
             <span class="tag">Puzzle</span>
             <span class="tag">Crown</span>
@@ -176,9 +176,12 @@
         </a>
 
         <a class="card" href="/games/safecracker/" aria-label="Safecracker — open game page">
-          <img class="card-icon" src="/assets/games/safecracker/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/safecracker/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/safecracker/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Safecracker</div>
-          <p class="card-tagline">Combination-lock puzzle. Spin the crown. Feel the gate buzz. Crack five safes.</p>
+          <p class="card-tagline">Combination-lock puzzle for Wear OS. Spin the crown. Feel the gate buzz.</p>
           <div class="card-tags">
             <span class="tag">Puzzle</span>
             <span class="tag">Crown</span>
@@ -186,9 +189,12 @@
         </a>
 
         <a class="card" href="/games/morse-tap/" aria-label="Morse Tap — open game page">
-          <img class="card-icon" src="/assets/games/morse-tap/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/morse-tap/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/morse-tap/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Morse Tap</div>
-          <p class="card-tagline">Learn Morse code by feel. The watch buzzes a word — you tap it back.</p>
+          <p class="card-tagline">Learn Morse code by feel. Watch buzzes a word — tap it back. Wear OS game.</p>
           <div class="card-tags">
             <span class="tag">Puzzle</span>
             <span class="tag">Haptic</span>
@@ -196,9 +202,12 @@
         </a>
 
         <a class="card" href="/games/crown-pinball/" aria-label="Crown Pinball — open game page">
-          <img class="card-icon" src="/assets/games/crown-pinball/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/crown-pinball/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/crown-pinball/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Crown Pinball</div>
-          <p class="card-tagline">Pinball for your watch. The crown is the paddle. Real ball physics on a bezel.</p>
+          <p class="card-tagline">Pinball for your watch. Crown is the paddle. Wear OS arcade, no phone needed.</p>
           <div class="card-tags">
             <span class="tag">Arcade</span>
             <span class="tag">Crown</span>
@@ -206,9 +215,12 @@
         </a>
 
         <a class="card" href="/games/crown-darts/" aria-label="Crown Darts — open game page">
-          <img class="card-icon" src="/assets/games/crown-darts/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/crown-darts/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/crown-darts/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Crown Darts</div>
-          <p class="card-tagline">Darts for Wear OS. Crown to aim, time the power, hit the bull.</p>
+          <p class="card-tagline">Darts for Wear OS. Crown to aim, time the power, hit the bullseye.</p>
           <div class="card-tags">
             <span class="tag">Arcade</span>
             <span class="tag">Crown</span>
@@ -216,7 +228,10 @@
         </a>
 
         <a class="card" href="/games/helix-drop/" aria-label="Helix Drop — open game page">
-          <img class="card-icon" src="/assets/games/helix-drop/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/helix-drop/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/helix-drop/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Helix Drop</div>
           <p class="card-tagline">Helix for Wear OS. The ball drops — spin the crown to thread the gaps.</p>
           <div class="card-tags">
@@ -225,15 +240,67 @@
           </div>
         </a>
 
-
-        <a class="card" href="/games/memory-buzz/" aria-label="Memory Buzz — open page">
-          <img class="card-icon" src="/assets/games/memory-buzz/icon.png" alt="" width="88" height="88">
+        <a class="card" href="/games/memory-buzz/" aria-label="Memory Buzz — open game page">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/memory-buzz/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/memory-buzz/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Memory Buzz</div>
-          <p class="card-tagline">A memory game where each colour buzzes differently — play by feel.</p>
+          <p class="card-tagline">Memory game for Wear OS. Each colour buzzes differently — play by feel.</p>
           <div class="card-tags">
             <span class="tag">Puzzle</span>
             <span class="tag">Brain</span>
           </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="coming-soon" class="container section soon-wrap" aria-labelledby="soon-h">
+      <h2 class="section-heading" id="soon-h">New: coming soon · 6 games</h2>
+      <p class="section-sub">Six more games are on the way. Each has a page with screenshots and the full feature list.</p>
+      <div class="soon-grid">
+
+        <a class="soon-card" href="/games/crown-ace/" aria-label="Crown Ace — coming soon, open page">
+          <figure class="bezel"><img src="/assets/games/crown-ace/screenshot-3.webp" alt="Dreadnought boss: a wide armoured ship with turrets, an orange blast and a bullet stream" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+          <h3>Crown Ace</h3>
+          <p>Turn the crown to fly. Weave rocks and lasers, graze bullets, beat the bosses.</p>
+          <span class="pill-soon">Coming soon</span>
+        </a>
+
+        <a class="soon-card" href="/games/rewind/" aria-label="Rewind — coming soon, open page">
+          <figure class="bezel"><img src="/assets/games/rewind/screenshot-2.webp" alt="Level 1.2: a glowing red blade sweeps around a hub, with the rewind charge bar and the hourglasses above" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+          <h3>Rewind</h3>
+          <p>Turn the crown to move time. Rewind the traps, reach the exit.</p>
+          <span class="pill-soon">Coming soon</span>
+        </a>
+
+        <a class="soon-card" href="/games/beacon/" aria-label="Beacon — coming soon, open page">
+          <figure class="bezel"><img src="/assets/games/beacon/screenshot-3.webp" alt="Two ships on the water, one inside a pink targeting ring as the beam swings towards it" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+          <h3>Beacon</h3>
+          <p>Swing the lighthouse beam with the crown and guide ships safely to the quay.</p>
+          <span class="pill-soon">Coming soon</span>
+        </a>
+
+        <a class="soon-card" href="/games/orbital/" aria-label="Orbital — coming soon, open page">
+          <figure class="bezel"><img src="/assets/games/orbital/screenshot-2.webp" alt="Level 19, Undertow: a comet with a white tail leaves a planet orbit, with black holes and star targets around it" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+          <h3>Orbital</h3>
+          <p>Orbit planets, let go at the right moment and slingshot your comet home.</p>
+          <span class="pill-soon">Coming soon</span>
+        </a>
+
+        <a class="soon-card" href="/games/echo/" aria-label="Echo — coming soon, open page">
+          <figure class="bezel"><img src="/assets/games/echo/screenshot-2.webp" alt="A yellow submarine at 5182 metres sees sonar-drawn cave walls in blue and a pink anglerfish" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+          <h3>Echo</h3>
+          <p>Steer a tiny sub through a black abyss by sonar, touch and sound.</p>
+          <span class="pill-soon">Coming soon</span>
+        </a>
+
+        <a class="soon-card" href="/games/firefly/" aria-label="Firefly — coming soon, open page">
+          <figure class="bezel"><img src="/assets/games/firefly/screenshot-3.webp" alt="Night pond: a frog sits on a lily pad under a full moon while the lantern leads the swarm" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+          <h3>Firefly</h3>
+          <p>Walk a lantern through the night and lead a swarm of fireflies into their jars.</p>
+          <span class="pill-soon">Coming soon</span>
         </a>
 
       </div>
@@ -244,7 +311,10 @@
       <div class="grid">
 
         <a class="card" href="/apps/step-pet/" aria-label="Step Pet — open app page">
-          <img class="card-icon" src="/assets/apps/step-pet/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/apps/step-pet/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/apps/step-pet/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Step Pet</div>
           <p class="card-tagline">Walk to raise a tiny pet on your wrist. A step counter that's actually fun.</p>
           <div class="card-tags">
@@ -254,7 +324,10 @@
         </a>
 
         <a class="card" href="/apps/bubble-level/" aria-label="Bubble Level — open app page">
-          <img class="card-icon" src="/assets/apps/bubble-level/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/apps/bubble-level/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/apps/bubble-level/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Bubble Level</div>
           <p class="card-tagline">A spirit level on your wrist. Lay the watch flat — green means level.</p>
           <div class="card-tags">
@@ -266,14 +339,17 @@
       </div>
     </section>
 
-    <section id="coming-soon" class="container section">
-      <h2 class="section-heading">Coming soon · 8</h2>
+    <section id="also-soon" class="container section">
+      <h2 class="section-heading">Also coming soon · 2</h2>
       <div class="grid">
 
         <a class="card" href="/games/brick-breaker/" aria-label="Brick Breaker — open page">
-          <img class="card-icon" src="/assets/games/brick-breaker/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/brick-breaker/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/brick-breaker/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Brick Breaker</div>
-          <p class="card-tagline">Breakout for Wear OS. The crown is your paddle, all the way around.</p>
+          <p class="card-tagline">Brick breaker for Wear OS. The crown is your paddle, all the way around.</p>
           <div class="card-tags">
             <span class="tag">Arcade</span>
             <span class="tag">Soon</span>
@@ -281,70 +357,12 @@
         </a>
 
         <a class="card" href="/games/crown-fishing/" aria-label="Crown Fishing — open page">
-          <img class="card-icon" src="/assets/games/crown-fishing/icon.png" alt="" width="88" height="88">
+          <div class="card-art">
+            <figure class="bezel"><img src="/assets/games/crown-fishing/screenshot-1.webp" alt="" width="480" height="480" loading="lazy" decoding="async"><span class="sheen"></span></figure>
+            <img class="card-icon" src="/assets/games/crown-fishing/icon-176.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </div>
           <div class="card-name">Crown Fishing</div>
           <p class="card-tagline">Fishing for Wear OS. The crown is your reel. Feel the bite.</p>
-          <div class="card-tags">
-            <span class="tag">Casual</span>
-            <span class="tag">Soon</span>
-          </div>
-        </a>
-
-
-        <a class="card" href="/games/crown-ace/" aria-label="Crown Ace — open page">
-          <img class="card-icon" src="/assets/games/crown-ace/icon.png" alt="" width="88" height="88">
-          <div class="card-name">Crown Ace</div>
-          <p class="card-tagline">Space shooter for Wear OS. Turn the crown to fly. Weave rocks and lasers, beat the bosses.</p>
-          <div class="card-tags">
-            <span class="tag">Arcade</span>
-            <span class="tag">Soon</span>
-          </div>
-        </a>
-
-        <a class="card" href="/games/rewind/" aria-label="Rewind — open page">
-          <img class="card-icon" src="/assets/games/rewind/icon.png" alt="" width="88" height="88">
-          <div class="card-name">Rewind</div>
-          <p class="card-tagline">Puzzle platformer for Wear OS. The crown is time. Rewind the traps, reach the exit.</p>
-          <div class="card-tags">
-            <span class="tag">Puzzle</span>
-            <span class="tag">Soon</span>
-          </div>
-        </a>
-
-        <a class="card" href="/games/beacon/" aria-label="Beacon — open page">
-          <img class="card-icon" src="/assets/games/beacon/icon.png" alt="" width="88" height="88">
-          <div class="card-name">Beacon</div>
-          <p class="card-tagline">Lighthouse puzzle for Wear OS. Swing the beam. Bring every ship home.</p>
-          <div class="card-tags">
-            <span class="tag">Puzzle</span>
-            <span class="tag">Soon</span>
-          </div>
-        </a>
-
-        <a class="card" href="/games/orbital/" aria-label="Orbital — open page">
-          <img class="card-icon" src="/assets/games/orbital/icon.png" alt="" width="88" height="88">
-          <div class="card-name">Orbital</div>
-          <p class="card-tagline">Slingshot puzzle for Wear OS. Orbit, release, fly the comet home.</p>
-          <div class="card-tags">
-            <span class="tag">Puzzle</span>
-            <span class="tag">Soon</span>
-          </div>
-        </a>
-
-        <a class="card" href="/games/echo/" aria-label="Echo — open page">
-          <img class="card-icon" src="/assets/games/echo/icon.png" alt="" width="88" height="88">
-          <div class="card-name">Echo</div>
-          <p class="card-tagline">Sonar dive for Wear OS. The screen is black until you ping.</p>
-          <div class="card-tags">
-            <span class="tag">Puzzle</span>
-            <span class="tag">Soon</span>
-          </div>
-        </a>
-
-        <a class="card" href="/games/firefly/" aria-label="Firefly — open page">
-          <img class="card-icon" src="/assets/games/firefly/icon.png" alt="" width="88" height="88">
-          <div class="card-name">Firefly</div>
-          <p class="card-tagline">Herding game for Wear OS. Carry the lantern. Lead the fireflies to their jars.</p>
           <div class="card-tags">
             <span class="tag">Casual</span>
             <span class="tag">Soon</span>
@@ -366,26 +384,18 @@
 
   <script>
   (function () {
-    var root = document.querySelector('.hero-slider');
-    if (!root) return;
-    var slides = [].slice.call(root.querySelectorAll('.hero-slide'));
-    var dots = [].slice.call(root.querySelectorAll('.hero-dots button'));
-    if (slides.length < 2) return;
-    var i = 0, timer = null;
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function show(n) {
-      i = (n + slides.length) % slides.length;
-      slides.forEach(function (s, x) { s.classList.toggle('is-active', x === i); });
-      dots.forEach(function (d, x) { d.setAttribute('aria-current', x === i ? 'true' : 'false'); });
-    }
-    function start() { if (reduce) return; stop(); timer = setInterval(function () { show(i + 1); }, 6000); }
-    function stop() { if (timer) { clearInterval(timer); timer = null; } }
-    dots.forEach(function (d, x) { d.addEventListener('click', function () { show(x); start(); }); });
-    root.querySelector('.hero-prev').addEventListener('click', function () { show(i - 1); start(); });
-    root.querySelector('.hero-next').addEventListener('click', function () { show(i + 1); start(); });
-    root.addEventListener('mouseenter', stop);
-    root.addEventListener('mouseleave', start);
-    start();
+    var el = document.getElementById('watch-cluster');
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.matchMedia('(pointer: fine)').matches) return;
+    var raf = 0;
+    window.addEventListener('pointermove', function (e) {
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        raf = 0;
+        el.style.setProperty('--mx', ((e.clientX / window.innerWidth) * 2 - 1).toFixed(3));
+        el.style.setProperty('--my', ((e.clientY / window.innerHeight) * 2 - 1).toFixed(3));
+      });
+    }, { passive: true });
   })();
   </script>
 </body>
