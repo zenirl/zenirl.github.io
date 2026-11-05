@@ -686,3 +686,10 @@ h2.section-heading {
   white-space: nowrap;
 }
 @media (max-width: 480px) { .site-header nav a.hide-sm { display: none; } }
+
+/* Prominent section titles (home) */
+.section-head { text-align: center; margin: 0 auto 36px; max-width: 640px; }
+.section-head .eyebrow { display: block; font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+.section-head h2 { font-size: clamp(28px, 5vw, 40px); font-weight: 300; line-height: 1.15; margin: 0 0 12px; color: var(--text, #F5F2E8); }
+.section-head p { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.5; }
+#apps { border-top: 1px solid rgba(255,255,255,.08); padding-top: 56px; }
