@@ -927,6 +927,7 @@ def render_game(g: Game) -> str:
       <nav aria-label="Primary">
         <a href="{nav_href}">{nav_label}</a>
         <a href="/#coming-soon">Coming soon</a>
+        <a href="/about/">About</a>
         <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a>
       </nav>
     </div>
@@ -974,8 +975,8 @@ def render_game(g: Game) -> str:
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 ZenIRL · <a href="mailto:zencandev@gmail.com">zencandev@gmail.com</a></p>
-      <p><a href="/">{all_label}</a></p>
+      <p>&copy; 2026 ZenIRL, a <a href="https://helpivy.com/" rel="noopener">Helpivy</a> label · <a href="mailto:zencandev@gmail.com">zencandev@gmail.com</a></p>
+      <p><a href="/">{all_label}</a> · <a href="/about/">About</a></p>
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
   </footer>
@@ -990,7 +991,7 @@ def write_sitemap() -> None:
     <loc>{BASE_URL}/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>"""]
+  </url>""", f"  <url><loc>{BASE_URL}/about/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>"]
     for g in GAMES + APPS:
         base = "apps" if g.kind == "app" else "games"
         prio = "0.8" if g.package else "0.5"
@@ -998,7 +999,7 @@ def write_sitemap() -> None:
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(rows) + "\n</urlset>\n"
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(xml)
-    print(f"wrote sitemap.xml ({len(GAMES) + len(APPS) + 1} urls)")
+    print(f"wrote sitemap.xml ({len(GAMES) + len(APPS) + 2} urls)")
 
 
 def main() -> None:

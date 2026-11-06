@@ -5,6 +5,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://zenirl.github.io/about/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://zenirl.github.io/games/asteroid-field/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://zenirl.github.io/games/haptic-beat/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://zenirl.github.io/games/sphere-defense/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
