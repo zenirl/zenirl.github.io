@@ -975,7 +975,7 @@ def render_game(g: Game) -> str:
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 ZenIRL, a <a href="https://helpivy.com/" rel="noopener">Helpivy</a> label · <a href="mailto:zencandev@gmail.com">zencandev@gmail.com</a></p>
+      <p>&copy; 2026 ZenIRL, a <a href="https://helpivy.com/" rel="noopener">Helpivy</a> label · <a href="mailto:help@helpivy.com">help@helpivy.com</a></p>
       <p><a href="/">{all_label}</a> · <a href="/about/">About</a></p>
       <p>Follow on X: <a href="https://x.com/zenIRL_" rel="noopener" target="_blank" aria-label="ZenIRL on X (opens in a new tab)">@zenIRL_</a></p>
     </div>
