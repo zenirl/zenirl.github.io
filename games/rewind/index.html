@@ -36,7 +36,10 @@
     "name": "ZenIRL",
     "url": "https://zenirl.github.io/",
     "sameAs": ["https://x.com/zenIRL_"]
-  }
+  },
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.zenirl.rewind",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.zenirl.rewind",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
   </script>
 
@@ -48,7 +51,7 @@
     }
   </style>
 </head>
-<body>
+<body class="has-sticky">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="site-header">
@@ -78,7 +81,7 @@
           <span class="tag">Casual</span>
           </div>
           <div class="cta-row">
-          <span class="btn btn-coming">Coming soon</span>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.rewind" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a class="btn btn-secondary" href="https://zenirl.github.io/policies/rewind.html">Privacy policy</a>
           </div>
         </div>
@@ -135,6 +138,19 @@
     </div>
   </footer>
 
+  <div class="sticky-cta" id="sticky-cta">
+    <span class="sticky-name">Rewind</span>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.zenirl.rewind" rel="noopener" target="_blank">Get on Google Play<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </div>
+  <script>
+  (function () {
+    var bar = document.getElementById('sticky-cta'), hero = document.querySelector('.game-hero .cta-row');
+    if (!bar || !hero || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (es) {
+      bar.classList.toggle('is-visible', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
+    }).observe(hero);
+  })();
+  </script>
   <script>
   (function () {
     var v = document.querySelector('video[data-clip]');

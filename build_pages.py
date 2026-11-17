@@ -487,7 +487,7 @@ GAMES: list[Game] = [
     Game(
         slug="crown-ace",
         name="Crown Ace",
-        package=None,
+        package="com.zenirl.ace",
         category="Arcade",
         schema_category="GameApplication",
         short_desc="Vertical space shooter for Wear OS. Turn the crown to fly, weave rocks and laser gates, graze bullets, beat the bosses. Free and offline.",
@@ -523,7 +523,7 @@ GAMES: list[Game] = [
         slug="rewind",
         name="Rewind",
         title_name="Rewind: Crown Time Courier",
-        package=None,
+        package="com.zenirl.rewind",
         category="Puzzle",
         schema_category="GameApplication",
         short_desc="Puzzle platformer for Wear OS. Turn the crown to move time, rewind the traps and reach the exit. 30 levels in five chapters. Free and offline.",
